@@ -598,6 +598,9 @@ a.btn-cta {
 .pricing-wrapper .item-3 .item-inner {
   background: #F8A13F;
 }
+.pricing-wrapper .item-4 .item-inner {
+  background: #AB28B5;
+}
 .pricing-wrapper .item-heading {
   font-weight: 800;
   font-size: 18px;
