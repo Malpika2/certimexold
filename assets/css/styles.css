@@ -194,7 +194,7 @@ a.btn-cta {
 .main-nav {
   margin-top: 6px;
 }
-.main-nav .navbar-toggle {
+.main-nav .ultinasn-toggle {
   margin-right: 0;
   margin-top: 0;
   background: none;
@@ -203,14 +203,14 @@ a.btn-cta {
   top: 10px;
   background: #26282c;
 }
-.main-nav .navbar-toggle:focus {
+.main-nav .ultinasn-toggle:focus {
   outline: none;
 }
-.main-nav .navbar-toggle .icon-bar {
+.main-nav .ultinasn-toggle .icon-bar {
   background-color: #fff;
   height: 3px;
 }
-.main-nav .navbar-toggle:hover .icon-bar {
+.main-nav .ultinasn-toggle:hover .icon-bar {
   background-color: #fff;
 }
 .main-nav .nav .nav-item {
@@ -260,107 +260,107 @@ a.btn-cta {
 .footer .fa-heart {
   color: #EA5395;
 }
-/* ======= Hero Section ======= */
-.hero-section {
+/* ======= inicio Section ======= */
+.inicio-section {
   min-height: 560px;
   background: #494d55;
   position: relative;
 }
-.hero-section .figure-holder-wrapper {
+.inicio-section .figure-holder-wrapper {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   overflow: hidden;
 }
-.hero-section .figure-holder {
+.inicio-section .figure-holder {
   position: relative;
   height: 560px;
 }
-.hero-section .figure-holder .figure-image {
+.inicio-section .figure-holder .figure-image {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 10;
 }
-.hero-carousel {
+.inicio-carousel {
   height: 560px;
   color: #fff;
 }
-.hero-carousel .carousel-inner .item {
+.inicio-carousel .carousel-inner .item {
   height: 560px;
   background-position: center center;
 }
-.hero-carousel .carousel-inner .item-1 {
-  background-image: url('../images/hero-1.jpg');
+.inicio-carousel .carousel-inner .item-1 {
+  background-image: url('../images/inicio-1.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-.hero-carousel .carousel-inner .item-2 {
-  background-image: url('../images/hero-2.jpg');
+.inicio-carousel .carousel-inner .item-2 {
+  background-image: url('../images/inicio-2.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-.hero-carousel .carousel-inner .item-3 {
-  background-image: url('../images/hero-3.jpg');
+.inicio-carousel .carousel-inner .item-3 {
+  background-image: url('../images/inicio-3.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-.hero-carousel .carousel-inner .heading {
+.inicio-carousel .carousel-inner .heading {
   font-size: 30px;
   line-height: 1.4;
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 15px;
 }
-.hero-carousel .carousel-inner .intro {
+.inicio-carousel .carousel-inner .intro {
   font-size: 18px;
 }
-.hero-carousel .carousel-inner .intro + .btn {
+.inicio-carousel .carousel-inner .intro + .btn {
   margin-top: 15px;
 }
-/* ======= About Section ======= */
-.about-section {
+/* ======= servicios Section ======= */
+.servicios-section {
   padding-top: 90px;
 }
-.about-section .section-title {
+.servicios-section .section-title {
   margin: 0;
   margin-bottom: 15px;
   font-size: 36px;
   font-weight: 300;
 }
-.about-section .intro {
+.servicios-section .intro {
   color: #a2a6af;
   font-size: 16px;
   max-width: 760px;
   margin: 0 auto;
   margin-bottom: 60px;
 }
-.about-section .items-wrapper {
+.servicios-section .items-wrapper {
   margin-bottom: 60px;
 }
-.about-section .items-wrapper .figure-holder {
+.servicios-section .items-wrapper .figure-holder {
   min-height: 170px;
   margin-bottom: 15px;
   vertical-align: bottom;
 }
-.about-section .items-wrapper .item-inner {
+.servicios-section .items-wrapper .item-inner {
   padding: 30px;
 }
-.about-section .items-wrapper .item-title {
+.servicios-section .items-wrapper .item-title {
   color: #40babd;
   font-size: 18px;
   font-weight: bold;
   margin: 0;
   margin-bottom: 15px;
 }
-.about-section .items-wrapper .item-desc {
+.servicios-section .items-wrapper .item-desc {
   color: #616670;
 }
 .technologies {
@@ -372,24 +372,24 @@ a.btn-cta {
 .technologies li:last-child {
   margin-right: 0;
 }
-.testimonials {
+.acerca {
   background: #40babd;
 }
-.testimonials-inner {
+.acerca-inner {
   padding: 60px 30px;
   position: relative;
   max-width: 800px;
 }
-.testimonials-inner .profile-holder {
+.acerca-inner .profile-holder {
   position: absolute;
   left: 30px;
   text-align: center;
 }
-.testimonials-inner .profile-image {
+.acerca-inner .profile-image {
   display: inline-block;
   margin: 0 auto;
 }
-.testimonials-inner .quote {
+.acerca-inner .quote {
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
   margin-left: 130px;
@@ -408,7 +408,7 @@ a.btn-cta {
   position: relative;
   padding: 15px;
 }
-.testimonials-inner .quote:before {
+.acerca-inner .quote:before {
   position: absolute;
   left: -10px;
   top: 30px;
@@ -419,8 +419,8 @@ a.btn-cta {
   border-bottom: 10px solid transparent;
   border-right: 10px solid rgba(0, 0, 0, 0.2);
 }
-/* ======= Testimonials Section ======= */
-.testimonials-section {
+/* ======= acerca Section ======= */
+.acerca-section {
   background: #40babd url('../images/map.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -429,30 +429,30 @@ a.btn-cta {
   padding-top: 90px;
   padding-bottom: 90px;
 }
-.testimonials-section .section-title {
+.acerca-section .section-title {
   margin: 0;
   margin-bottom: 30px;
   font-size: 36px;
   font-weight: 300;
   color: #fff;
 }
-.testimonials-section .item {
+.acerca-section .item {
   position: relative;
   max-width: 800px;
   padding: 30px;
 }
-.testimonials-section .item:last-child {
+.acerca-section .item:last-child {
   margin-bottom: 0;
 }
-.testimonials-section .item.item-reversed .profile-holder {
+.acerca-section .item.item-reversed .profile-holder {
   left: inherit;
   right: 30px;
 }
-.testimonials-section .item.item-reversed .quote {
+.acerca-section .item.item-reversed .quote {
   margin-left: 0;
   margin-right: 105px;
 }
-.testimonials-section .item.item-reversed .quote:before {
+.acerca-section .item.item-reversed .quote:before {
   left: inherit;
   right: -10px;
   content: "";
@@ -461,18 +461,18 @@ a.btn-cta {
   border-left: 10px solid rgba(0, 0, 0, 0.2);
   border-right: inherit;
 }
-.testimonials-section .item .profile-holder {
+.acerca-section .item .profile-holder {
   position: absolute;
   left: 30px;
   text-align: center;
 }
-.testimonials-section .item .profile-image {
+.acerca-section .item .profile-image {
   display: inline-block;
   margin: 0 auto;
   width: 80px;
   height: 80px;
 }
-.testimonials-section .item .quote {
+.acerca-section .item .quote {
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
   margin-left: 105px;
@@ -491,7 +491,7 @@ a.btn-cta {
   position: relative;
   padding: 30px;
 }
-.testimonials-section .item .quote:before {
+.acerca-section .item .quote:before {
   position: absolute;
   left: -10px;
   top: 30px;
@@ -502,77 +502,77 @@ a.btn-cta {
   border-bottom: 10px solid transparent;
   border-right: 10px solid rgba(0, 0, 0, 0.2);
 }
-.testimonials-section .item .quote-source {
+.acerca-section .item .quote-source {
   color: rgba(0, 0, 0, 0.6);
 }
-/* ======= Features Section ======= */
-.features-section {
+/* ======= ultimasn Section ======= */
+.ultimasn-section {
   padding-top: 90px;
   padding-bottom: 90px;
 }
-.features-section .section-title {
+.ultimasn-section .section-title {
   margin: 0;
   margin-bottom: 15px;
   font-size: 36px;
   font-weight: 300;
 }
-.features-section .intro {
+.ultimasn-section .intro {
   color: #a2a6af;
   font-size: 16px;
   max-width: 760px;
   margin: 0 auto;
   margin-bottom: 60px;
 }
-.feature-nav {
+.ultimasn-nav {
   text-align: center;
   margin-bottom: 30px;
 }
-.feature-nav > li {
+.ultimasn-nav > li {
   position: relative;
 }
-.feature-nav > li .fa {
+.ultimasn-nav > li .fa {
   margin-right: 5px;
 }
-.feature-nav > li.active > a {
+.ultimasn-nav > li.active > a {
   color: #40babd;
   background: none;
   padding: 8px 0;
 }
-.feature-nav > li > a {
+.ultimasn-nav > li > a {
   background: none;
   padding: 8px 0;
   color: #616670;
 }
-.feature-nav > li > a:hover {
+.ultimasn-nav > li > a:hover {
   background: none;
   color: #40babd;
 }
-/* ======= Pricing Section ======= */
-.pricing-section {
+/* ======= procedimientos Section ======= */
+.procedimientos-section {
   padding-top: 90px;
   padding-bottom: 90px;
 }
-.pricing-section .section-title {
+.procedimientos-section .section-title {
   margin: 0;
   margin-bottom: 15px;
   font-size: 36px;
   font-weight: 300;
 }
-.pricing-section .intro {
+.procedimientos-section .intro {
   color: #a2a6af;
   font-size: 16px;
   max-width: 760px;
   margin: 0 auto;
   margin-bottom: 60px;
 }
-.pricing-wrapper {
+.procedimientos-wrapper {
   max-width: 900px;
   margin: 0 auto;
 }
-.pricing-wrapper .item {
+.procedimientos-wrapper .item {
   margin-bottom: 30px;
 }
-.pricing-wrapper .item-inner {
+.procedimientos-wrapper .item-inner {
   color: #fff;
   padding: 30px;
   -webkit-border-radius: 8px;
@@ -586,50 +586,50 @@ a.btn-cta {
   background: #40babd;
   min-height: 390px;
 }
-.pricing-wrapper .item-inner a {
+.procedimientos-wrapper .item-inner a {
   color: rgba(0, 0, 0, 0.4);
 }
-.pricing-wrapper .item-1 .item-inner {
+.procedimientos-wrapper .item-1 .item-inner {
   background: #75c181;
 }
-.pricing-wrapper .item-2 .item-inner {
+.procedimientos-wrapper .item-2 .item-inner {
   background: #58bbee;
 }
-.pricing-wrapper .item-3 .item-inner {
+.procedimientos-wrapper .item-3 .item-inner {
   background: #F8A13F;
 }
-.pricing-wrapper .item-4 .item-inner {
+.procedimientos-wrapper .item-4 .item-inner {
   background: #AB28B5;
 }
-.pricing-wrapper .item-heading {
+.procedimientos-wrapper .item-heading {
   font-weight: 800;
   font-size: 18px;
   margin: 0;
   min-height: 60px;
 }
-.pricing-wrapper .price-figure {
+.procedimientos-wrapper .price-figure {
   font-size: 46px;
   margin-bottom: 15px;
 }
-.pricing-wrapper .price-figure .currency {
+.procedimientos-wrapper .price-figure .currency {
   vertical-align: super;
   font-size: 26px;
   -webkit-opacity: 0.6;
   -moz-opacity: 0.6;
   opacity: 0.6;
 }
-.pricing-wrapper .price-figure .number {
+.procedimientos-wrapper .price-figure .number {
   font-weight: 500;
 }
-.pricing-wrapper .price-desc {
+.procedimientos-wrapper .price-desc {
   margin-bottom: 30px;
   min-height: 120px;
 }
-.pricing-wrapper a.btn {
+.procedimientos-wrapper a.btn {
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
 }
-.pricing-wrapper a.btn:hover {
+.procedimientos-wrapper a.btn:hover {
   background: rgba(0, 0, 0, 0.4);
 }
 /* ======= Team Section ======= */
@@ -767,7 +767,7 @@ a.btn-cta {
 }
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
-  .navbar-collapse {
+  .ultinasn-collapse {
     border-top: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -779,35 +779,35 @@ a.btn-cta {
     background: #26282c;
     z-index: 40;
   }
-  .header .main-nav .navbar-collapse .nav-item.active a {
+  .header .main-nav .ultinasn-collapse .nav-item.active a {
     color: #40babd;
   }
-  .header.header-scrolled .main-nav .navbar-collapse .nav-item.active a {
+  .header.header-scrolled .main-nav .ultinasn-collapse .nav-item.active a {
     border: none;
     color: #40babd;
   }
-  .main-nav .navbar-collapse .nav-item {
+  .main-nav .ultinasn-collapse .nav-item {
     margin-right: 0;
   }
-  .main-nav .navbar-collapse .nav-item a {
+  .main-nav .ultinasn-collapse .nav-item a {
     text-align: center;
   }
-  .pricing-wrapper .item-inner {
+  .procedimientos-wrapper .item-inner {
     min-height: inherit;
   }
-  .pricing-wrapper .price-desc {
+  .procedimientos-wrapper .price-desc {
     min-height: inherit;
   }
-  .hero-section .figure-image {
+  .inicio-section .figure-image {
     width: 300px;
   }
-  .hero-carousel .carousel-inner .heading {
+  .inicio-carousel .carousel-inner .heading {
     font-size: 26px;
   }
-  .hero-carousel .carousel-inner .item-content-inner {
+  .inicio-carousel .carousel-inner .item-content-inner {
     padding-top: 100px;
   }
-  .hero-section .figure-holder .figure-image {
+  .inicio-section .figure-holder .figure-image {
     width: inherit;
     bottom: 0;
     top: inherit;
@@ -824,24 +824,24 @@ a.btn-cta {
   .members-wrapper .item:last-child {
     margin-bottom: 0;
   }
-  .hero-carousel {
+  .inicio-carousel {
     height: 660px;
   }
-  .hero-section .carousel-inner {
+  .inicio-section .carousel-inner {
     height: 660px;
   }
-  .hero-carousel .carousel-inner .item {
+  .inicio-carousel .carousel-inner .item {
     height: 660px;
   }
-  .testimonials-section .item .profile-image {
+  .acerca-section .item .profile-image {
     width: 60px;
     height: 60px;
   }
-  .testimonials-section .item .quote {
+  .acerca-section .item .quote {
     margin-left: 85px;
     padding: 15px;
   }
-  .testimonials-section .item.item-reversed .quote {
+  .acerca-section .item.item-reversed .quote {
     margin-right: 85px;
   }
   .team-section .item-inner {
@@ -850,19 +850,19 @@ a.btn-cta {
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .feature-nav {
+  .ultimasn-nav {
     text-align: left;
     padding-left: 30px;
   }
-  .feature-nav > li {
+  .ultimasn-nav > li {
     font-size: 15px;
   }
-  .hero-section .figure-holder .figure-image {
+  .inicio-section .figure-holder .figure-image {
     width: 400px;
     bottom: inherit;
     top: 130px;
   }
-  .hero-carousel .carousel-inner .item-content-inner {
+  .inicio-carousel .carousel-inner .item-content-inner {
     max-width: 300px;
     padding-top: 120px;
   }
@@ -872,25 +872,25 @@ a.btn-cta {
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .feature-nav {
+  .ultimasn-nav {
     margin-top: 30px;
     padding-left: 15px;
   }
-  .feature-nav > li {
+  .ultimasn-nav > li {
     font-size: 16px;
   }
-  .feature-nav > li > a {
+  .ultimasn-nav > li > a {
     padding: 15px 0;
   }
-  .feature-nav > li.active > a {
+  .ultimasn-nav > li.active > a {
     padding: 15px 0;
   }
-  .hero-section .figure-holder .figure-image {
+  .inicio-section .figure-holder .figure-image {
     width: 420px;
     bottom: inherit;
     top: 130px;
   }
-  .hero-carousel .carousel-inner .item-content-inner {
+  .inicio-carousel .carousel-inner .item-content-inner {
     max-width: 500px;
   }
   .team-section .item-inner {
@@ -899,7 +899,7 @@ a.btn-cta {
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  .hero-section .figure-holder .figure-image {
+  .inicio-section .figure-holder .figure-image {
     width: 570px;
     bottom: 0;
     top: inherit;
