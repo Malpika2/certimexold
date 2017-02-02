@@ -31,9 +31,9 @@
   <header id="header" class="header">  
         <div class="container">       
             <h1 class="logo">
-                <a class="scrollto" href="#hero">
+                <a class="scrollto" href="#inicio">
                     <span class="logo-icon-wrapper"><img class="logo-icon" src="assets/images/logo-icon.svg" alt="icon"></span>
-                    <span class="text"><span class="highlight">APP</span>KIT</span></a>
+                    <span class="text"><span class="highlight">CERTI</span>MEX</span></a>
             </h1><!--//logo-->
             <nav class="main-nav navbar-right" role="navigation">
                 <div class="navbar-header">
@@ -46,14 +46,36 @@
                 </div><!--//navbar-header-->
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active nav-item"><a class="scrollto" href="#about">About</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#testimonials">Testimonials</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#features">Features</a></li>                        
-                        <li class="nav-item"><a class="scrollto" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#pricing">Pricing</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#contact">Contact</a></li>
+                        <li class="active nav-item"><a class="scrollto" href="#inicio">INICIO</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#acerca">CERCA DE</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#servicios">SERVICIOS</a></li>                        
+                        <li class="nav-item"><a class="scrollto" href="#procedimientos">PROCEDIMIENTOS</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#ultimasn">ULTIMAS NOTICIAS</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#contact">CONTACTO</a></li>						
+						<li class="dropdown nav-item">
+						  <a href="#incio" class="dropdown-toggle" data-toggle="dropdown">LOGIN<span class="caret"></span></a>
+							<ul id="menudp" class="dropdown-menu">
+								<li>
+									<div class="col-md-12">
+										<form class="form" role="form" method="post" action="administrador.html" accept-charset="UTF-8" id="login-nav">
+											<div class="form-group">
+												<input type="text" class="form-control" id="User" placeholder="Usuario" required>
+											</div>
+											<div class="form-group">
+												<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-cta" align="center">Sign in</button>
+											</div>
+										</form>
+									</div>
+								</li>
+							</ul><!--menu-->
+						</li>
+						
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
+
             </nav><!--//main-nav-->                     
         </div><!--//container-->
     </header><!--//header-->
@@ -65,9 +87,9 @@
             <div class="figure-holder-wrapper">
         		<div class="container">
             		<div class="row">
-                		<div class="figure-holder">
-                	        <img class="figure-image img-responsive" src="assets/images/imac.png" alt="image" />
-                        </div><!--//figure-holder-->
+                		<!-- <div class="figure-holder"> -->
+                	        <!-- <img class="figure-image img-responsive" src="assets/images/imac.png" alt="image" /> -->
+                        <!-- </div><!--//figure-holder--> -->
             		</div><!--//row-->
         		</div><!--//container-->
     		</div><!--//figure-holder-wrapper-->
@@ -240,21 +262,37 @@
 					<div class="item item-1 col-md-3 col-sm-3 col-xs-12">
 						<div class="item-inner">
 							<h3 class="item-heading">INSPECCIÓN Y CERTIFICACIÓN</h3>
+							<div class="price-desc">
+								<p>Procedimiento para la inspeción y certificación de productos orgánicos</br></br></br></br></br></p>
+							</div>
+							<a class="btn btn-cta" href="#">Leer más</a>
 						</div>
 					</div><!--Inspeccion-->
 					<div class="item item-2 col-md-3 col-sm-3 col-xs-12">
 						<div class="item-inner">
 							<h3 class="item-heading">JAS-ORGANIC</h3>
+								<div class="price-desc">
+									<p>Procedimiento para la inspección y certificación de productos orgánicos de acuerdo con las normas JAS- Organic de Japón.</br></br></p>
+								</div>
+							<a class="btn btn-cta" href="#">Leer más</a>
 						</div>
 					</div><!--JAS-ORGANIC-->
 					<div class="item item-3 col-md-3 col-sm-3 col-xs-12">
 						<div class="item-inner">
 							<h3 class="item-heading">BIRD FRIENDLY</h3>
+							<div class="price-desc">
+								<p>Procedimientos para la inspección y ceritifación para Café Bajo sombra "Cafe Bird Friendly".</br></br></br></br></p>
+							</div>
+							<a class="btn btn-cta" href="#">Leer más</a>
 						</div>
 					</div><!--bird friendly-->
 					<div class="item item-4 col-md-3 col-sm-3 col-xs-12">
 						<div class="item-inner">
 							<h3 class="item-heading">SIMBOLO DE PEQUEÑOS PRODUCTORES</h3>
+								<div class="price-desc">
+									<p> Procedimiento para la inspección y certificación de las normas de Símbolo de Pequeños Productores</br></br></br></p>
+								</div>
+							<a class="btn btn-cta" href="#">Lee más</a>
 						</div>
 					</div><!-- simbolo de pequeños -->
 				</div>
@@ -277,14 +315,63 @@
 	
     <div id="contact" class="contact-section">
         <div class="container text-center">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-content">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                
-            </div>
-            <a class="btn btn-cta btn-primary" href="https://wrapbootstrap.com/theme/admin-appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm">Get in Touch</a>
-            
+            <h2 class="section-title">Contáctanos</h2>
+           
+                <div class="item item-3 col-md-4 col-sm-4 col-xs-12">
+					<p> Direccion</p>
+					<p>Calle 16 de Septiembre 204, Colonia Ejido Guadalupe Victoria, Oaxaca de Juárez, Oaxaca, México.</p>
+				
+				</div>
+				<div class="item item-6 col-md-4 col-sm-4 col-sx-12">
+					<p>Telefono</p>
+					<p>01 951 520 2687 - 01 951 520 0617</p>
+				</div>
+				<div class="item item-7 col-md-4 col-sm-4 col-sx-12">
+					<p> Correo </p>
+					<p>Certimex@certimexsc.com</p>
+				</div>  
         </div><!--//container-->
+		<div class="container text-left">
+			<h3>Directorio</h3>
+				<div class="item col-md-3 col-sm-3 col-xs-12">
+					<b>Consejo directivo</b>
+						<ul style="list-style-type:none">
+							<li>M.C. Esteban Escamilla Prado</li>
+							<li>Dr. Cesáreo Rodriguez Hernández</li>
+							<li>Ing. Criserio Augusto Torres Ventura</li>
+						</ul>
+					<b> Comisión de Normas</b>
+						<ul style="list-style-type:none">
+							<li>Francisco Vanderhoff Boersma</li>
+							<li>Jesús Martínez Salazar</li>
+							<li>Taurino Reyes Santiago</li>
+						</ul>
+				</div>
+				<div class="item col-md-3 col-sm-3 col-xs-12">
+					<b>Planeacion del Servicio de Certificación</b>
+						<ul style="list-style-type:none">
+							<li>Liliana Barrios Barrionuevo</li>
+							<li>Ing. Agrónomo en Horticultura</li>
+							<li>inspeccion@certimex.com</li>
+						</ul>
+				</div>
+				<div class="item col-md-3 col-sm-3 col-xs-12">
+					<b>Personal de Inspección</b>
+						<ul style="list-style-type:none">
+							<li>Carlos Aguilar Moreno</li>
+							<li>Ing. Agrónomo en sistemas de producción</li>
+							<li>carloscafem@hotmail.com</li>
+						</ul>
+				</div>
+				<div class="item col-md-3 col-sm-3 col-xs-12">
+					<b></br></b>
+						<ul style="list-style-type:none">
+							<li>Martha Juárez Ramírez</li>
+							<li>Ing. Agrónomo</li>
+							<li>marthitacmx@hotmail.com</li>
+						</ul>
+				</div>
+		</div>
     </div><!--//contact-section-->
     
     <footer class="footer text-center">
