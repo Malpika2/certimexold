@@ -34,9 +34,9 @@
 		</div>
 		<div class="container">
 			<div class="item col-md-2 acerca-section">
-				<h2 class="section-title">MENÚ</H2>
+				<h2 class="section-title">ADMINISTRADOR</H2>
 				<ul style="list-style-type:none">
-					<li>Convocatorias</li>
+					<li class="">Convocatorias</li>
 					<li>Acerca de..</li>
 					<li>Noticias</li>
 					<li>Directorio</li>
@@ -46,11 +46,16 @@
 					
 				</ul> 
 				
-				<form id="subirImg" name="subirImg" enctype="multipart/form-data" method="post" action="uploader.php">
-					<input type="file" name="imagen" id="imagen" />
-					<input type="submit" name="subirBtn" id="subirBtn" value="Subir imagen" />
-				</form>
+				
 			</div>
+				<form id="subirImg" name="subirImg" enctype="multipart/form-data" method="post" action="Procesos/uploader.php">
+					<input type="Text" name="titulo" placeholder="Titulo de la Noticia" required/>;
+					<input type="file" name="imagen" id="imagen" required/>
+					<input type="Text" name="contenido" id="contenido" placeholder="Contenido de la Noticia" required/>
+					<input type="date" name="fecha" step="1" min="2017-01-01" max="2017-12-31" value="<?php echo date("Y-m-d");?>"/>
+					<input type="submit" name="subirBtn" id="subirBtn" value="Subir imagen" required/>
+					
+				</form>
 			
 		</div>
 	
