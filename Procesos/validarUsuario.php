@@ -20,7 +20,7 @@ if ($resultado->num_rows === 0) { //No se encuentran coincidencias
 }
 $usuario = $resultado->fetch_assoc();
 	echo "usuario: ".$usuario['usuario']." Contraseña: ".$usuario['contrasena']."";
-	header("Location:../administrador.php");
+	header("Location:../admin/index.html");
 	
 	$resultado->free();
 	$mysqli->close();
