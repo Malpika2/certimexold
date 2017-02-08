@@ -19,5 +19,6 @@
 	$imagen = $resultado->fetch_assoc(); //almacena datos de la consulta anterior
 	$sql2 = "INSERT	INTO img_noticias(id_noticias,url) VALUES ('$imagen[id_noticias]','$destino')"; //almacena en la tabla img_noticias la direccion
 	$mysqli->query($sql2);
+	header("Location:../Admin/noticias.php");
 
 ?>
