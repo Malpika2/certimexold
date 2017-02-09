@@ -148,10 +148,9 @@
 												
 												while($fila = $resultado->fetch_row()){
 													echo "<tr>";
-													echo "<td class=\"\">$fila[2]</td>";
-													echo "<td> $fila[1]</td>";
-													echo "<td> <button class=\"btn btn-primary\"><i class=\"fa fa-edit \" href=\"#$fila[0]\" data-toggle=\"tab\">Editar</i></button>";
-													
+													echo "<td>$fila[2]</td>";
+													echo "<td>$fila[1]</td>";
+													echo "<td class=\"\"><button class=\"btn btn-primary\" href=\"#$fila[0]\" data-toggle=\"tab\"><i class=\"fa fa-edit \">Editar</i></button>";
 													echo "</tr>";	
 												}
 											?>
@@ -182,10 +181,13 @@
 											echo"<form role=\"form\" name=\"actualizarNoticia\" enctype=\"multipart/form-data\" method=\"POST\" action=\"../Procesos/update.php\">";
 												echo"<div class=\"form-group\"><input class=\"form-control\" name=\"tituloN\" value=\"$fila[1]\" required/></div>";
 												echo"<div class=\"form-group\"><img src=\"$fila[3]\" width=\"300\"/> </div>";
+												echo"<div class=\"form-group\"><label>Actualizar Imagen</label><input type=\"file\" name=\"imagenN\"/></div>";
 												echo"<div class=\"form-group\"><textarea class=\"form-control\" name=\"contenidoN\" rows=\"3\" required/>$fila[4]</textarea> </div>";
 												echo"<div class=\"form-group\"><button type=\"submit\" name=\"BtnEA\" value=\"actualizar\" class=\"btn btn-default\"><i class=\" fa fa-refresh \"></i> Actualizar</button>";
-												echo"          <button type=\"submit\" name=\"BtnEA\" value=\"eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-pencil\"></i> Eliminar</button></div>";
-											echo"</form>";
+												echo"          				   <button type=\"submit\" name=\"BtnEA\" value=\"eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-pencil\"></i> Eliminar</button></div>";
+												echo"<div class=\"form-group\"><input class=\"form-control\" name=\"id_noticiasN\" value=\"$fila[0]\" type=\"hidden\" required/></div>";
+												
+												echo"</form>";
 										echo"</div>";
 									}
 								?>
