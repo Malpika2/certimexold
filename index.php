@@ -29,13 +29,14 @@
 <body>
 <!-- ******HEADER****** --> 
   <header id="header" class="header">  
-        <div class="container">       
+        <div class="container col-md-12 col-sm-12 col-sx-12">       
             <h1 class="logo">
                 <a class="scrollto" href="#inicio">
-                    <span class="logo-icon-wrapper"><img class="logo-icon" src="assets/images/logo-icon.svg" alt="icon"></span>
-                    <span class="text"><span class="highlight">CERTI</span>MEX</span></a>
+                    <span class="logo-icon-wrapper"><img class="logo-icon" src="assets/images/logo-icon.svg" alt="icon"/></span>
+                    <span class="text"><span class="highlight">CERTI</span>MEX</span>
+				</a>
             </h1><!--//logo-->
-            <nav class="main-nav navbar-right" role="navigation">
+            <nav class="main-nav navbar-right" role="navigation ">
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -44,8 +45,8 @@
                         <span class="icon-bar"></span>
                     </button><!--//nav-toggle-->
                 </div><!--//navbar-header-->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                <div id="navbar-collapse" class="navbar-collapse collapse"> 
+                    <ul class="nav navbar-nav" >
                         <li class="active nav-item"><a class="scrollto" href="#inicio">INICIO</a></li>
                         <li class="nav-item"><a class="scrollto" href="#acerca">CERCA DE</a></li>
                         <li class="nav-item"><a class="scrollto" href="#servicios">SERVICIOS</a></li>                        
@@ -59,10 +60,13 @@
 									<div class="col-md-12">
 										<form class="form" role="form" method="post" action="Procesos/validarUsuario.php" accept-charset="UTF-8" id="login-nav">
 											<div class="form-group">
-												<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>
+													<h5>Iniciar Sesión</h5>
 											</div>
 											<div class="form-group">
-												<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Password" required>
+												<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required/>
+											</div>
+											<div class="form-group">
+												<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Password" required/>
 											</div>
 											<div class="form-group">
 												<button type="submit" class="btn btn-cta" align="center">Sign in</button>
@@ -72,26 +76,24 @@
 								</li>
 							</ul><!--menu-->
 						</li>
-						
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
-
-            </nav><!--//main-nav-->                     
+			</nav><!--//main-nav-->                     
         </div><!--//container-->
     </header><!--//header-->
     
     <div id="inicio" class="inicio-section">
         
         <div id="inicio-carousel" class="inicio-carousel carousel carousel-fade slide" data-ride="carousel" data-interval="10000">
-            
+            <!--
             <div class="figure-holder-wrapper">
         		<div class="container">
-            		<div class="row">
+            		<!--<div class="row">
                 		<!-- <div class="figure-holder"> -->
                 	        <!-- <img class="figure-image img-responsive" src="assets/images/imac.png" alt="image" /> -->
-                        <!-- </div><!--//figure-holder--> -->
-            		</div><!--//row-->
-        		</div><!--//container-->
+                        <!-- </div><!--//figure-holder--> 
+            		<!--</div><!--//row--
+        		</div><!--//container--
     		</div><!--//figure-holder-wrapper-->
             
 			<!-- Indicators -->
@@ -110,7 +112,7 @@
 					<div class="item-content container">
     					<div class="item-content-inner">
     				        
-				            <h2 class="heading">Certificadora Mexicana de<br class="hidden-xs">Productos y Procesos Ecológicos</h2>
+				            <h2 class="heading">Certificadora Mexicana de<br class="hidden-xs"/>Productos y Procesos Ecológicos</h2>
 				            <p class="intro">Constituida con la finalidad de contribuir en el desarrollo de la producción mediante
 											la inspección y certificación de calidad de los procesos y productos agrícolas, pecuarios, agroindustriales y forestales.</p>
 				            <a class="btn btn-primary btn-cta scrollto" href="#acerca">Saber mas...</a>		
@@ -122,7 +124,6 @@
 				<div class="item item-2">
 					<div class="item-content container">
 						<div class="item-content-inner">
-    				        
 				            <h2 class="heading">Convocatoria</h2>
 				            <p class="intro">Curso Básico para la formación de inspectores para </br>la certificación de productos orgánicos.</br>Mercado nacional e internacional.</p>
 				            <a class="btn btn-primary btn-cta" href="http://www.certimexsc.com/docs/solicitud_inspectores.docx" target="_blank">Solicitud de Participación</a>
@@ -139,16 +140,16 @@
     <!-- acerca" "CERCA DE" -->
 	<div id="acerca" class="acerca-section">
         <div class="container">
-            <h2 class="section-title text-center">¿Que es CERTIMEX?</h2>
-				<blockquote>
-                    <p>CERTIMEX, Certificadora Mexicana de Productos y Procesos Ecológicos es una sociedad civil -legalmente registrada bajo el Núm. 164/97-,
-					constituida con la finalidad de contribuir en el desarrollo de la producción mediante la inspección y certificación de calidad de los procesos y productos agrícolas, pecuarios, agroindustriales y forestales.</p></br>
-					<p>CERTIMEX ha definido su política empresarial con base en los siguientes objetivos:</p>
-                    <p>Garantizar a productores, procesadores, comercializadores y consumidores la realización de actividades de inspección y certificación de productos y procesos con competencia, independencia e imparcialidad.</p>                
-                    <p>Desarrollar un sistema de calidad, tanto para la inspección como para la certificación, que esté adecuado al contexto nacional pero equivalente a las exigencias internacionales.</p>   
-                    <p>Desarrollar sistemas de certificación nacionales que económicamente estén al alcance de todos los interesados, pero que además le permita a CERTIMEX obtener los ingresos necesarios para asegurar la continuidad e independencia de su trabajo. Hoy sustentamos nuestra tarea en la oportunidad, la fortaleza, la fertilidad, el movimiento y el comercio justo.</p>   
-                </blockquote>
-
+			<?php 
+				include("Procesos/conexion.php");
+				$consulta="SELECT * FROM informacion";
+				$resultado=$mysqli->query($consulta);
+				$fila =$resultado->fetch_assoc();
+				echo "<h2 class=\"section-title text-center\">$fila[titulo]</h2>";
+				echo "<blockquote>";
+				echo "<p>$fila[informacion]</p>";
+				echo "</blockquote>";
+			?>
         </div><!--//container-->
     </div><!--//acerca ACERCA DE -->
     
@@ -304,45 +305,50 @@
             <h2 class="section-title">ULTIMAS NOTICIAS</h2>
             <div class="intro">AQUI FALTAN COSAS</div>
 			
-							<div class="panel-group" id="accordion">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">Collapsible Group Item #1</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
-                                        <div class="panel-body">
-											<image src="imagenes_noticias/gato.jpg"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Collapsible Group Item #2</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
-                                        <div class="panel-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">Collapsible Group Item #3</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div
-					
+				<div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Ultimas Noticias
+                        </div>
+                        <div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+								<thead>
+									<tr>
+										<?php
+												include("Procesos/conexion.php");
+												$consulta="SELECT id_noticias,titulo,fecha FROM noticias ORDER BY fecha DESC";
+												$resultado= $mysqli->query($consulta);
+												
+												while($fila = $resultado->fetch_row()){
+													echo "<th class=\"\"><div style='width:200px; overflow:hidden;'> <a href=\"#$fila[0]\" data-toggle=\"tab\">$fila[1]</a></div> </th>";
+														
+												}
+										?> 
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+								</table>
+							</div>
+							<div class="tab-content">
+								<?php
+										$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC";
+										$resultado= $mysqli->query($consulta);
+										while($fila = $resultado->fetch_row()){
+											echo "<div class=\"tab-pane fade\" id=\"$fila[0]\">";
+												echo "<div class\"\"><h2> $fila[1]</h2></div>";
+												echo "<div class\"\"><div class=\"col-md-4 col-sm-4 col-xs-12\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" width=\"300\"/></div>";
+												echo "<div class=\"col-md-8 col-sm-4 col-xs-12\"><p align=\"justify\"> $fila[4]</p></div></div>";
+												echo "<div class=\"\"><p align=\"left\">$fila[2]</p></div>";
+											echo "</div>";
+										}
+								?>
+							</div>
+                        </div> <!-- /panel-body-->
+                    </div>
+                </div>
+							
         </div><!--//container-->
     </div><!--//ULTIMAS NOTICIAS SECCION-->
 	

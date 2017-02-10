@@ -89,12 +89,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Bienvenido! <small> Usted pordrá editar el contenido de las secciones de la izquierda </small>
+                            NOTICIAS! <small> Actualizar , Consultar , Editar y Eliminar  </small>
                         </h1>
                     </div>
                 </div>
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-5">
 						
 						<form role="form" name="subirImg" enctype="multipart/form-data" method="post" action="../Procesos/uploader.php">
 							<div class="panel panel-success">
@@ -125,7 +125,7 @@
 						</form>
 						
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-7">
 						<div class="panel panel-info">
 							<div class="panel-heading">
 								<label>Ultimas Noticias</label>
@@ -196,7 +196,7 @@
 						</div>
 					</div>
 				</div><!--\row-->
-				<footer><p>Soporte Técnico.  <a href="#">www.Malpika.com</a></p></footer>
+				<footer><p>Soporte Técnico:.  <a href="#"></a></p></footer>
 			</div><!-- /. PAGE INNER  -->
         </div><!-- /. PAGE WRAPPER  -->
     </div>

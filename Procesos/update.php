@@ -1,5 +1,5 @@
 <?php
-	include("/conexion.php");
+include("/conexion.php");
 $carpeta = "../Imagenes_Noticias/";
 $boton = $_POST['BtnEA'];
 $tituloN = $_POST['tituloN'];

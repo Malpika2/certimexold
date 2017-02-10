@@ -95,21 +95,18 @@
                     </div>
                 </div> <!-- /. ROW  -->
 					<form role="form" name="actInfo" enctype="multipart/form-data" method="post" action="../Procesos/actInfo.php">
-						<div class="panel panel-primary">
+						<div class="panel panel-info">
 						<?php
 							include("../procesos/conexion.php");
-							$consulta="SELECT * FROM informacion";
-							$resultado=$sqli->($consulta);
+							$consulta = "SELECT * FROM informacion";
+							$resultado = $mysqli->query($consulta);
 							$info=$resultado->fetch_assoc();
-							echo "<div class=\"panel-heading\">";
-								echo "<input name=\"titulo\" placeholder=$info['titulo'] required/>";
-							echo "</div>";
-							echo "<div class=\"panel-body\">";
-								echo "<textarea name=\"informacion\"required/>$info['informacion']</textarea>";
-							echo "</div>";
-							echo "<div class=\"panel-footer\">3";
-							echo"</div>";
+							echo "<div class=\"panel-heading col-md-12\"><input class=\"col-md-5\" name=\"titulo\" value=\"$info[titulo]\"required/></div>";
+							echo "<div class=\"panel-body col-md-12\"> <textarea class=\"col-md-12\" rows= \"10\" name=\"informacion\"required/>$info[informacion]</textarea></div>";
 						?>
+							<div class="panel-footer">
+								<button type="submit" name="BtnAct" value="actualizar" class="btn btn-default"><i class="fa fa-refresh"></i> Actualizar</button>
+							</div>
 						</div>
 					</form>
 				<footer><p>Soporte Técnico.  <a href="#"></a></p></footer>
