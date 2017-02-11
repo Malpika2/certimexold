@@ -126,13 +126,14 @@
 						
 					</div>
 					<div class="col-md-7">
+						<div class="panel panel-default">
 						<div class="panel panel-info">
 							<div class="panel-heading">
 								<label>Ultimas Noticias</label>
 							</div>
 							<div class="panel-body">
 								<div class="table-responsive">
-									<table class="table table-striped table-bordered table-hover">
+									<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 										<thead>
 											<tr>
 												<th>Fecha</th>
@@ -158,6 +159,7 @@
 									</table>
 								</div>
 							</div>
+						</div>
 						</div>
 					</div>
 				</div><!-- /row-->

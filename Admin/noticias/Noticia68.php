@@ -1,35 +1,4 @@
-<?php
-	include("/conexion.php");
 
-	$carpeta = "../Imagenes_Noticias/";
-	
-	$titulo = $_POST['titulo'];
-	$contenido = $_POST['contenido'];
-	$fecha = $_POST['fecha'];
-	
-	
-	opendir($carpeta);
-	$destino = $carpeta.$_FILES['imagen']['name'];
-	copy($_FILES['imagen']['tmp_name'],$destino);
-	$nombre=$_FILES['imagen']['name'];
-	$consulta="";
-	
-	
-	
-	
-	$sql = "INSERT INTO noticias(titulo,contenido,fecha) VALUES ('$titulo','$contenido','$fecha')";
-	$resultado= $mysqli->query($sql);//Ejecuta insercion a tabla "noticias"
-	
-	$sqlConsult = "SELECT * FROM noticias WHERE noticias.titulo = '$titulo'";
-	$resultado = $mysqli->query($sqlConsult);//ejecuta consulta 
-	$imagen = $resultado->fetch_assoc(); //almacena datos de la consulta anterior en una variable
-	
-	$sql2 = "INSERT	INTO img_noticias(id_noticias,url) VALUES ('$imagen[id_noticias]','$destino')"; //almacena en la tabla img_noticias la direccion
-	$mysqli->query($sql2);
-	
-	$nombreArchivo = "Noticia$imagen[id_noticias].php";
-	$archivo = fopen("../Admin/noticias/$nombreArchivo","w+");
-	fwrite($archivo,'
 					<!DOCTYPE html>
 						<html lang="en">
 							<head>
@@ -41,7 +10,7 @@
 								<meta name="description\" content=\"Responsive HTML5 website landing page for developers and startups">
 								<meta name="author\" content=\"Xiaoying Riley at 3rd Wave Media">    
 								<link rel="shortcut icon\" href=\"../../favicon.ico">  
-								<link href=\'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800\' rel=\'stylesheet\' type=\'text/css\'>
+								<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 								<!-- Global CSS -->
 								<link rel="stylesheet" href="../../assets/plugins/bootstrap/css/bootstrap.min.css">   
 								<!-- Plugins CSS -->
@@ -65,8 +34,8 @@
 										
 											<div class="col-md-12"><div>
 											<?php
-											echo "<img src=\"/certimex'.$destino.'\"/>";
-											echo "<p>contenido :'.$contenido.'</p>";
+											echo "<img src=\"/certimex../Imagenes_Noticias/Hydrangeas.jpg\"/>";
+											echo "<p>contenido :68</p>";
 											?>
 								</div>
 												<div class="panel panel-default">
@@ -84,7 +53,7 @@
 																			$resultado= $mysqli->query("$consulta");
 																			
 																			while($fila = $resultado->fetch_row()){
-																				echo "<th class=\"\"><div style=\'width:200px; overflow:hidden;\'> <a class\"active\" href=\"#$fila[0]\" data-toggle=\"tab\">$fila[1]</a></div> </th>";
+																				echo "<th class=\"\"><div style='width:200px; overflow:hidden;'> <a class\"active\" href=\"#$fila[0]\" data-toggle=\"tab\">$fila[1]</a></div> </th>";
 																					
 																			}
 																	?> 
@@ -104,7 +73,7 @@
 																		
 																		echo "<div class=\"tab-pane fade\" id=\"$fila[0]\">";
 																			echo "<div class=\"active\"><h2> $fila[1]</h2></div>";
-																			echo "<div class=\"\"><div class=\"col-md-5 col-sm-5 col-xs-12\" style=\'overflow:hidden\'><img src=\"/certimex/Imagenes_Noticias/$fila[3]\" width=\"300\"/></div>";
+																			echo "<div class=\"\"><div class=\"col-md-5 col-sm-5 col-xs-12\" style='overflow:hidden'><img src=\"/certimex/Imagenes_Noticias/$fila[3]\" width=\"300\"/></div>";
 																			echo "<div class=\"col-md-7 col-sm-7 col-xs-12\" style=\"with:65px; height:65px; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\">$fila[2]</br>$contenido ...</p></div></div>";
 																			echo "<a class=\"btn btn-info\" href=\"Noticia$fila[0].php\">Leer Más</a>";
 																		echo "</div>"; 
@@ -128,8 +97,4 @@
 							<script type="text/javascript" src="../../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>     
 							<script type="text/javascript" src="../../assets/js/main.js"></script> 
 						</HTML>
-						'); 
-	header("Location:../Admin/noticias.php");
-//Agregar contenido y reviar***
-
-?>
+						

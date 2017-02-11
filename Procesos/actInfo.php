@@ -7,6 +7,4 @@
 	$resultado= $mysqli->query($consulta);
 	echo "Actualizado";
 	header("Location:../Admin/acerca.php");
-
-
 ?>

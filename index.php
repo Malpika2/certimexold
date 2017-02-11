@@ -303,8 +303,6 @@
     <div id="ultimasn" class="procedimientos-section">
         <div class="container text-center">
             <h2 class="section-title">ULTIMAS NOTICIAS</h2>
-            <div class="intro">AQUI FALTAN COSAS</div>
-			
 				<div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -336,12 +334,15 @@
 										$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC";
 										$resultado= $mysqli->query($consulta);
 										while($fila = $resultado->fetch_row()){
+											$contenido=substr($fila[4],0,100);
+											
 											echo "<div class=\"tab-pane fade\" id=\"$fila[0]\">";
-												echo "<div class\"\"><h2> $fila[1]</h2></div>";
-												echo "<div class\"\"><div class=\"col-md-4 col-sm-4 col-xs-12\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" width=\"300\"/></div>";
-												echo "<div class=\"col-md-8 col-sm-4 col-xs-12\"><p align=\"justify\"> $fila[4]</p></div></div>";
-												echo "<div class=\"\"><p align=\"left\">$fila[2]</p></div>";
-											echo "</div>";
+												echo "<div class=\"\"><h2> $fila[1]</h2></div>";
+												echo "<div class=\"\"><div class=\"col-md-5 col-sm-5 col-xs-12\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" width=\"300\"/></div>";
+												echo "<div class=\"col-md-7 col-sm-7 col-xs-12\" style=\"with:65px; height:65px; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\">$fila[2]</br>$contenido ...</p></div></div>";
+												echo "<a class=\"btn btn-info\" href=\"Admin/noticias/Noticia$fila[0].php\">Leer Más</a>";
+												
+											echo "</div>"; 
 										}
 								?>
 							</div>
