@@ -340,11 +340,11 @@
 												echo "<div class=\"\"><h2> $fila[1]</h2></div>";
 												echo "<div class=\"\"><div class=\"col-md-5 col-sm-5 col-xs-12\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" width=\"300\"/></div>";
 												echo "<div class=\"col-md-7 col-sm-7 col-xs-12\" style=\"with:65px; height:65px; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\">$fila[2]</br>$contenido ...</p></div></div>";
-												echo "<a class=\"btn btn-info\" href=\"Admin/noticias/Noticia$fila[0].php\">Leer Más</a>";
-												
+												echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-info\">Leer Más</button>";
+												echo "<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form>";
 											echo "</div>"; 
 										}
-								?>
+								?>	
 							</div>
                         </div> <!-- /panel-body-->
                     </div>

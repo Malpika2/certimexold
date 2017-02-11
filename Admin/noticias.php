@@ -187,7 +187,7 @@
 												echo"<div class=\"form-group\"><textarea class=\"form-control\" name=\"contenidoN\" rows=\"3\" required/>$fila[4]</textarea> </div>";
 												echo"<div class=\"form-group\"><button type=\"submit\" name=\"BtnEA\" value=\"actualizar\" class=\"btn btn-default\"><i class=\" fa fa-refresh \"></i> Actualizar</button>";
 												echo"          				   <button type=\"submit\" name=\"BtnEA\" value=\"eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-pencil\"></i> Eliminar</button></div>";
-												echo"<div class=\"form-group\"><input class=\"form-control\" name=\"id_noticiasN\" value=\"$fila[0]\" type=\"hidden\" required/></div>";
+												echo"<div class=\"form-group\"><input class=\"form-control\" name=\"id_noticiasN\" value=\"$fila[0]\" type=\"hidden\"/></div>";
 												
 												echo"</form>";
 										echo"</div>";
