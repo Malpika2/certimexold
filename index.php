@@ -108,7 +108,7 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
     			
-				<div class="item item-1 active">
+				<div class="item item-1 active" style="background-image: url(assets/images/inicio-1.jpg);">
 					<div class="item-content container">
     					<div class="item-content-inner">
     				        
@@ -145,9 +145,10 @@
 				$consulta="SELECT * FROM informacion";
 				$resultado=$mysqli->query($consulta);
 				$fila =$resultado->fetch_assoc();
-				echo "<h2 class=\"section-title text-center\">$fila[titulo]</h2>";
+				$titulo2= strtoupper($fila['titulo']);
+				echo "<h2 class=\"section-title text-center\">$titulo2</h2>";
 				echo "<blockquote>";
-				echo "<p>$fila[informacion]</p>";
+				echo nl2br("<p>$fila[informacion]</p>");
 				echo "</blockquote>";
 			?>
         </div><!--//container-->
@@ -340,7 +341,7 @@
 												echo "<div class=\"\"><h2> $fila[1]</h2></div>";
 												echo "<div class=\"\"><div class=\"col-md-5 col-sm-5 col-xs-12\" style='overflow:hidden'><img src=\"certimex/$fila[3]\" width=\"300\"/></div>";
 												echo "<div class=\"col-md-7 col-sm-7 col-xs-12\" style=\"with:65px; height:65px; overflow:hidden; text-overflow:ellipsis;\"><p align=\"justify\">$fila[2]</br>$contenido ...</p></div></div>";
-												echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-info\">Leer Más</button>";
+												echo "<form class=\"\" role=\form\" method=\"GET\" action=\"noticias.php\"><button type=\"submit\" class=\"btn btn-info\" formtarget=\"_blank\">Leer Más</button>";
 												echo "<div class=\"\"><input class=\"\" name=\"id_noticias\" value=\"$fila[0]\" type=\"hidden\"/></div></form>";
 											echo "</div>"; 
 										}
