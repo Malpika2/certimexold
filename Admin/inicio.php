@@ -66,17 +66,17 @@
                         <a href="acerca.php"><i class="fa fa-desktop"></i>Acerca de</a>
                     </li>
 					<li>
-                        <a href="servicios.html"><i class="fa fa-bar-chart-o"></i>Servicios</a>
+                        <a href="servicios.php"><i class="fa fa-bar-chart-o"></i>Servicios</a>
                     </li>
                     <li>
-                        <a href="procedimientos.html"><i class="fa fa-qrcode"></i>Procedimientos</a>
+                        <a href="procedimientos.php"><i class="fa fa-qrcode"></i>Procedimientos</a>
                     </li>
                     
                     <li>
                         <a href="noticias.php"><i class="fa fa-table"></i>Noticias</a>
                     </li>
                     <li>
-                        <a href="directorio.html"><i class="fa fa-edit"></i> Directorio </a>
+                        <a href="directorio.php"><i class="fa fa-edit"></i> Directorio </a>
                     </li>
                 </ul>
 
@@ -103,14 +103,14 @@
                         </div>
                         <div class="panel-body">
 							<div class="row">
-								<div class="col-md-5 col-sm-5">
+								<div class="col-md-7 col-sm-7">
 									<div class="tab-content">
 										<div class="tab-pane fade active in" id="inicio">
 										</div>
 										<div class="tab-pane fade" id="formulario">
-											<form class="form" role="form" method="post" action="Procesos/procesaInicio.php" accept-charset="UTF-8" id="login-nav">
+											<form role="form" name="subirImg" enctype="multipart/form-data" method="post" action="../Procesos/procesaInicio.php">
 												<div class="form-group">
-														<h5>Agregar Nueva Imagen</h5>
+														<h5>Agregar Nuevo Elemento</h5>
 												</div>
 												<div class="form-group">
 													<input type="text" class="form-control" id="encabezado" name="encabezado" placeholder="Encabezado" required/>
@@ -119,12 +119,13 @@
 													<textarea class="form-control" name="contenido" placeholder="Contenido de la sección" rows="3" required/></textarea>
 												</div>
 												<div class="form-group">
-													<input type="text" class="form-control" id="complemento" name="complemento" placeholder="complemento (url)" required/>
+													<input type="text" class="form-control" id="complemento" name="complemento" placeholder="complemento (url)"/>
 												</div>
 												<div class="form-group">	
 													<label>Imagen:</label>
-													<input type="file" name="imagenC" id="imagenC" required/>
+													<input type="file" name="imagen" required/>
 												</div>
+												
 												<div class="form-group">
 													<button type="submit" class="btn btn-cta" align="center">Subir</button>
 												</div>
@@ -133,19 +134,20 @@
 										
 											<?php
 												include("../Procesos/conexion.php");
-												$consulta="SELECT noticias.id_noticias,noticias.titulo,noticias.fecha,img_noticias.url,noticias.contenido FROM noticias, img_noticias WHERE img_noticias.id_noticias=noticias.id_noticias ORDER BY fecha DESC";
+												$consulta="SELECT carrusel.id_carrusel,carrusel.encabezado,carrusel.contenido,carrusel.complemento,imagenes_carrusel.url FROM carrusel,imagenes_carrusel WHERE carrusel.id_carrusel=imagenes_carrusel.id_carrusel";
 												$resultado= $mysqli->query($consulta);
 												while($fila = $resultado->fetch_row()){
 													
 													echo "<div class=\"tab-pane fade\" id=\"$fila[0]\">";
-														echo"<form role=\"form\" name=\"actualizarNoticia\" enctype=\"multipart/form-data\" method=\"POST\" action=\"../Procesos/update.php\">";
-															echo"<div class=\"form-group\"><input class=\"form-control\" name=\"tituloN\" value=\"$fila[1]\" required/></div>";
-															echo"<div class=\"form-group\"><img src=\"$fila[3]\" width=\"300\"/> </div>";
-															echo"<div class=\"form-group\"><label>Actualizar Imagen</label><input type=\"file\" name=\"imagenN\"/></div>";
-															echo"<div class=\"form-group\"><textarea class=\"form-control\" name=\"contenidoN\" rows=\"3\" required/>$fila[4]</textarea> </div>";
-															echo"<div class=\"form-group\"><button type=\"submit\" name=\"BtnEA\" value=\"actualizar\" class=\"btn btn-default\"><i class=\" fa fa-refresh \"></i> Actualizar</button>";
-															echo"          				   <button type=\"submit\" name=\"BtnEA\" value=\"eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-pencil\"></i> Eliminar</button></div>";
-															echo"<div class=\"form-group\"><input class=\"form-control\" name=\"id_noticiasN\" value=\"$fila[0]\" type=\"hidden\"/></div>";
+														echo"<form role=\"form\" name=\"actualizarCarrusel\" enctype=\"multipart/form-data\" method=\"POST\" action=\"../Procesos/UpdateInicio.php\">";
+															echo"<div class=\"form-group\"><input class=\"form-control\" name=\"encabezado\" value=\"$fila[1]\" required/></div>";
+															echo"<div class=\"form-group\"><img src=\"$fila[4]\" width=\"500\"/> </div>";
+															echo"<div class=\"form-group\"><label>Actualizar Imagen</label><input type=\"file\" name=\"imagen\"/></div>";
+															echo"<div class=\"form-group\"><label>Contenido</label>	<textarea class=\"form-control\" name=\"contenido\" rows=\"3\" required/>$fila[2]</textarea> </div>";
+															echo"<div class=\"form-group\"><label>Complemento</label><input class=\"form-control\" name=\"complemento\" value=\"$fila[3]\" required/></div>";
+															echo"<div class=\"form-group\"><button type=\"submit\" name=\"BtnCarr\" value=\"actualizar\" class=\"btn btn-default\"><i class=\" fa fa-refresh \"></i> Actualizar</button>";
+															echo"          				   <button type=\"submit\" name=\"BtnCarr\" value=\"eliminar\" class=\"btn btn-danger\"><i class=\"fa fa-pencil\"></i> Eliminar</button></div>";
+															echo"<div class=\"form-group\"><input class=\"form-control\" name=\"id_carrusel\" value=\"$fila[0]\" type=\"hidden\"/></div>";
 															
 															echo"</form>";
 													echo"</div>";
@@ -153,26 +155,28 @@
 										?>
 									</div>
 								</div>
-								<div class="col-md-7 col-sm-7">
+								<div class="col-md-5 col-sm-5">
 									<div>
 										<div class="table-responsive">
 											<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 												<thead>
 													<tr>
-														<th>Fecha</th>
 														<th>Titulo</th>
+														<th>contenido</th>
 														<th>#</th>
 													</tr>
 												</thead>
 												<tbody>
 													<?php
-														$consulta="SELECT id_noticias,titulo,fecha FROM noticias ORDER BY fecha DESC";
+														$consulta="SELECT carrusel.id_carrusel,carrusel.encabezado,carrusel.contenido,carrusel.complemento FROM carrusel;";
 														$resultado= $mysqli->query($consulta);
 														
 														while($fila = $resultado->fetch_row()){
+															$contenido=substr($fila[2],0,20);
+															$titulo=substr($fila[1],0,20);
 															echo "<tr>";
-															echo "<td>$fila[2]</td>";
-															echo "<td>$fila[1]</td>";
+															echo "<td>$titulo...</td>";
+															echo "<td>$contenido...</td>";
 															echo "<td class=\"\"><button class=\"btn btn-primary\" href=\"#$fila[0]\" data-toggle=\"tab\"><i class=\"fa fa-edit \">Editar</i></button>";
 															echo "</tr>";	
 														}
@@ -185,7 +189,7 @@
 							</div>
 						</div>
                         <div class="panel-footer">
-                            Panel Footer
+							
                         </div>
                     </div>
                 </div>

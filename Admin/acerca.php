@@ -61,21 +61,24 @@
                     <li>
                         <a href="index.html"><i class="fa fa-dashboard"></i> Administrador</a>
                     </li>
+					<li>
+                        <a href="inicio.php"><i class="fa fa-desktop"></i>Inicio</a>
+                    </li>
                     <li>
-                        <a href="acerca.html" class="active-menu"><i class="fa fa-desktop"></i>Acerca de</a>
+                        <a href="acerca.php" class="active-menu"><i class="fa fa-desktop"></i>Acerca de</a>
                     </li>
 					<li>
-                        <a href="servicios.html"><i class="fa fa-bar-chart-o"></i>Servicios</a>
+                        <a href="servicios.php"><i class="fa fa-bar-chart-o"></i>Servicios</a>
                     </li>
                     <li>
-                        <a href="procedimientos.html"><i class="fa fa-qrcode"></i>Procedimientos</a>
+                        <a href="procedimientos.php"><i class="fa fa-qrcode"></i>Procedimientos</a>
                     </li>
                     
                     <li>
                         <a href="noticias.php"><i class="fa fa-table"></i>Noticias</a>
                     </li>
                     <li>
-                        <a href="directorio.html"><i class="fa fa-edit"></i> Directorio </a>
+                        <a href="directorio.php"><i class="fa fa-edit"></i> Directorio </a>
                     </li>
                 </ul>
 

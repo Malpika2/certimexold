@@ -36,7 +36,7 @@
                     <span class="text"><span class="highlight">CERTI</span>MEX</span>
 				</a>
             </h1><!--//logo-->
-            <nav class="main-nav navbar-right" role="navigation ">
+            <nav class="main-nav navbar-right" role="navigation "  style="background-color:red">
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -45,7 +45,7 @@
                         <span class="icon-bar"></span>
                     </button><!--//nav-toggle-->
                 </div><!--//navbar-header-->
-                <div id="navbar-collapse" class="navbar-collapse collapse"> 
+                <div id="navbar-collapse" class="navbar-collapse collapse"  > 
                     <ul class="nav navbar-nav" >
                         <li class="active nav-item"><a class="scrollto" href="#inicio">INICIO</a></li>
                         <li class="nav-item"><a class="scrollto" href="#acerca">CERCA DE</a></li>
@@ -85,53 +85,46 @@
     <div id="inicio" class="inicio-section">
         
         <div id="inicio-carousel" class="inicio-carousel carousel carousel-fade slide" data-ride="carousel" data-interval="10000">
-            <!--
-            <div class="figure-holder-wrapper">
-        		<div class="container">
-            		<!--<div class="row">
-                		<!-- <div class="figure-holder"> -->
-                	        <!-- <img class="figure-image img-responsive" src="assets/images/imac.png" alt="image" /> -->
-                        <!-- </div><!--//figure-holder--> 
-            		<!--</div><!--//row--
-        		</div><!--//container--
-    		</div><!--//figure-holder-wrapper-->
+           
             
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li class="active" data-slide-to="0" data-target="#inicio-carousel"></li>
-				<li data-slide-to="1" data-target="#inicio-carousel"></li>
-				<!--
-				<li data-slide-to="2" data-target="#inicio-carousel"></li>  
-				-->
+				<?php
+					include("Procesos/conexion.php");
+					$consultaCI = "SELECT * FROM carrusel"; 
+					$resultadoCI = $mysqli->query($consultaCI);
+					$cont=1;
+					$registros=$resultadoCI->num_rows;
+					while($cont<$registros){ 
+						echo "<li data-slide-to=\"$cont\" data-target=\"#inicio-carousel\"></li>";
+						$cont++;;
+					}
+				?>
 			</ol>
 			
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
-    			
-				<div class="item item-1 active" style="background-image: url(assets/images/inicio-1.jpg);">
-					<div class="item-content container">
-    					<div class="item-content-inner">
-    				        
-				            <h2 class="heading">Certificadora Mexicana de<br class="hidden-xs"/>Productos y Procesos Ecológicos</h2>
-				            <p class="intro">Constituida con la finalidad de contribuir en el desarrollo de la producción mediante
-											la inspección y certificación de calidad de los procesos y productos agrícolas, pecuarios, agroindustriales y forestales.</p>
-				            <a class="btn btn-primary btn-cta scrollto" href="#acerca">Saber mas...</a>		
-    				        
-    					</div><!--//item-content-inner-->
-					</div><!--//item-content-->
-				</div><!--//item-->
-				
-				<div class="item item-2">
-					<div class="item-content container">
-						<div class="item-content-inner">
-				            <h2 class="heading">Convocatoria</h2>
-				            <p class="intro">Curso Básico para la formación de inspectores para </br>la certificación de productos orgánicos.</br>Mercado nacional e internacional.</p>
-				            <a class="btn btn-primary btn-cta" href="http://www.certimexsc.com/docs/solicitud_inspectores.docx" target="_blank">Solicitud de Participación</a>
-    				        
-    					</div><!--//item-content-inner-->
-					</div>
-				</div><!--//item-->
-				
+				<?php
+					$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
+					$resultadoCS = $mysqli->query($consultaCS);
+					$conta=1;
+					while($fila=$resultadoCS->fetch_row()){
+						if($conta<=1){
+							$clase="\"item item-1 active\"";
+						}else{$clase="\"item item-$conta\"";}
+						echo "<div class=$clase style=\"background-image:url(certimex/$fila[3]);\">";
+							echo "<div class=\"item-content container\">";
+								echo "<div class=\"item-content-inner\">";
+									echo "<h2 class=\"heading\">$fila[0]</h2>";
+									echo "<p class=\"into\">$fila[1]</p>";
+									echo "<a class=\"btn btn-primary btn-cta\" href=\"$fila[2]\"> Saber más...</a>";
+								echo "</div>";
+							echo "</div>";
+						echo "</div>";
+					$conta++;
+					}
+				?>
 			</div><!--//carousel-inner-->
 
 		</div><!--//carousel-->
@@ -141,7 +134,6 @@
 	<div id="acerca" class="acerca-section">
         <div class="container">
 			<?php 
-				include("Procesos/conexion.php");
 				$consulta="SELECT * FROM informacion";
 				$resultado=$mysqli->query($consulta);
 				$fila =$resultado->fetch_assoc();

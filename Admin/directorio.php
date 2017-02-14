@@ -40,8 +40,6 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i>Administrador</a>
                         </li>
-                        <!-- <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a> -->
-                        <!-- </li> -->
                         <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
                         </li>
@@ -55,27 +53,30 @@
 		
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
+            <div class="sidebar-collapse"> <!-- menu inicio,....-->
                 <ul class="nav" id="main-menu">
 
                     <li>
                         <a href="index.html"><i class="fa fa-dashboard"></i> Administrador</a>
                     </li>
+					<li>
+                        <a href="inicio.php"><i class="fa fa-desktop"></i>Inicio</a>
+                    </li>
                     <li>
-                        <a href="acerca.html"><i class="fa fa-desktop"></i>Acerca de</a>
+                        <a href="acerca.php"><i class="fa fa-desktop"></i>Acerca de</a>
                     </li>
 					<li>
-                        <a href="servicios.html"><i class="fa fa-bar-chart-o"></i>Servicios</a>
+                        <a class="active-menu" href="servicios.php"><i class="fa fa-bar-chart-o"></i>Servicios</a>
                     </li>
                     <li>
-                        <a href="procedimientos.html"><i class="fa fa-qrcode"></i>Procedimientos</a>
+                        <a href="procedimientos.php"><i class="fa fa-qrcode"></i>Procedimientos</a>
                     </li>
                     
                     <li>
                         <a href="noticias.php"><i class="fa fa-table"></i>Noticias</a>
                     </li>
                     <li>
-                        <a href="directorio.html" class="active-menu"><i class="fa fa-edit"></i> Directorio </a>
+                        <a href="directorio.php"><i class="fa fa-edit"></i> Directorio </a>
                     </li>
                 </ul>
 
@@ -85,23 +86,66 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-
-
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Bienvenido! <small> Usted pordrá editar el contenido de las secciones de la izquierda </small>
+                            INICIO<small> Edicion del carrusel de imagenes</small>
                         </h1>
                     </div>
+					<div class="col-md-12 col-sm-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+						
+							<button type="button" class="btn btn-success" href="#formulario" data-toggle="tab">
+							<i class="glyphicon glyphicon-plus-sign"></i>
+							</button>
+							
+                        </div>
+                        <div class="panel-body">
+							<div class="row">
+								<div class="col-md-7 col-sm-7">
+									<div class="tab-content">
+										<div class="tab-pane fade active in" id="inicio">
+										</div>
+										<div class="tab-pane fade" id="formulario">
+											<form role="form" name="subirImg" enctype="multipart/form-data" method="post" action="../Procesos/procesaInicio.php">
+												
+											</form>
+										</div>
+										
+											<?php
+											?>
+									</div>
+								</div>
+								<div class="col-md-5 col-sm-5">
+									<div>
+										<div class="table-responsive">
+											<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+												<thead>
+													
+												</thead>
+												<tbody>
+													<?php
+													?>
+												</tbody>
+											</table>
+								</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <div class="panel-footer">
+							
+                        </div>
+                    </div>
                 </div>
-                <!-- /. ROW  -->
-
-				<footer><p>Soporte Técnico.  <a href="#">www.Malpika.com</a></p></footer>
-            </div>
-            <!-- /. PAGE INNER  -->
-        </div>
-        <!-- /. PAGE WRAPPER  -->
+					
+                </div><!-- /. ROW  -->
+            </div><!-- /. PAGE INNER  -->
+		<footer><p>Soporte Técnico.  <a href="#">www.123.com</a></p></footer>
+        </div><!-- /. PAGE WRAPPER  -->
     </div>
+
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
