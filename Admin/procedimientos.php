@@ -66,10 +66,10 @@
                         <a href="acerca.php"><i class="fa fa-desktop"></i>Acerca de</a>
                     </li>
 					<li>
-                        <a class="active-menu" href="servicios.php"><i class="fa fa-bar-chart-o"></i>Servicios</a>
+                        <a href="servicios.php"><i class="fa fa-bar-chart-o"></i>Servicios</a>
                     </li>
                     <li>
-                        <a href="procedimientos.php"><i class="fa fa-qrcode"></i>Procedimientos</a>
+                        <a class="active-menu" href="procedimientos.php"><i class="fa fa-qrcode"></i>Procedimientos</a>
                     </li>
                     
                     <li>

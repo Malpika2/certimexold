@@ -36,7 +36,7 @@
                     <span class="text"><span class="highlight">CERTI</span>MEX</span>
 				</a>
             </h1><!--//logo-->
-            <nav class="main-nav navbar-right" role="navigation "  style="background-color:red">
+            <nav class="main-nav navbar-right" role="navigation "  style="">
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -45,7 +45,7 @@
                         <span class="icon-bar"></span>
                     </button><!--//nav-toggle-->
                 </div><!--//navbar-header-->
-                <div id="navbar-collapse" class="navbar-collapse collapse"  > 
+                <div id="navbar-collapse" class="navbar-collapse collapse"> 
                     <ul class="nav navbar-nav" >
                         <li class="active nav-item"><a class="scrollto" href="#inicio">INICIO</a></li>
                         <li class="nav-item"><a class="scrollto" href="#acerca">CERCA DE</a></li>
@@ -152,50 +152,25 @@
             <h2 class="section-title">CERTIMEX</h2>
             
             <div class="items-wrapper row">
-                <div class="item col-sm-3 col-xs-12">
-                    <div class="item-inner">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="assets/images/figure-1.png" alt="image">
+			<?php
+			include("Procesos/conexion.php");
+			$sql = "SELECT * FROM servicios";
+			$servicios= $mysqli->query($sql);
+			while($fila = $servicios->fetch_row()){
+				
+			echo "<div class=\"item col-sm-3 col-xs-12\">
+                    <div class=\"item-inner\">
+                        <div class=\"figure-holder\">
+                            <img class=\"figure-image\" width=\"150px\" src=\"Admin/assets/img_servicios/$fila[3]\" alt=\"image\">
                         </div><!--//figure-holder-->
-                        <h3 class="item-title">	CERTIFICACIÓN</h3>
-                        <div class="item-desc">
-                            Consultar procedimientos para conocer a detalle cómo acceder a cada inspección y certificación.
+                        <h3 class=\"item-title\">$fila[1]</h3>
+                        <div class=\"item-desc\">
+                            <p align=\"justify\">$fila[2]</p>
                         </div><!--//item-desc-->
                     </div><!--//item-inner-->
-                </div><!--//item-->
-				<div class="item col-sm-3 col-xs-12">
-                    <div class="item-inner">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="assets/images/figure-1.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">EXPORTACIÓN</h3>
-                        <div class="item-desc">
-							Permisos de importación de productos orgánicos en la unión europea (UE) y emisión de certificados de control.
-                        </div><!--//item-desc-->
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item col-sm-3 col-xs-12">
-                    <div class="item-inner">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="assets/images/figure-2.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">SELLO CERTIMEX</h3>
-                        <div class="item-desc">
-							Marca registrada que sólo podrá ser usada por los proveedores que tengan la certificación vigente para el tipo de producto correspondiente.	
-						</div><!--//item-desc-->
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item col-sm-3 col-xs-12">
-                    <div class="item-inner">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="assets/images/figure-3.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">PROCEDIMIENTO: APELACIONES, QUEJAS Y ENMIENDAS</h3>
-                        <div class="item-desc">
-							Apelaciones, quejas y enmiendas	
-						</div><!--//item-desc-->
-                    </div><!--//item-inner-->
-                </div><!--//item-->
+                </div><!--//item-->";
+			}
+			?>
             </div><!--//items-wrapper-->
 			
 			<div class="items-wrapper row">
@@ -217,7 +192,7 @@
                         </div><!--//figure-holder-->
                         <h3 class="item-title">PROYECTOS CERTIFICADOS</h3>
                         <div class="item-desc">
-							Conoce los operadores certificados por CERTIMEX
+							<a class="" href="http://www.certimexsc.com/operadores.php">Conoce los operadores certificados por CERTIMEX</a>
                         </div><!--//item-desc-->
                     </div><!--//item-inner-->
                 </div><!--//item-->

@@ -15,6 +15,7 @@
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 
 <body>
@@ -108,10 +109,59 @@
 										<div class="tab-pane fade active in" id="inicio">
 										</div>
 										<div class="tab-pane fade" id="formulario">
-											<form role="form" name="subirImg" enctype="multipart/form-data" method="post" action="../Procesos/procesaInicio.php">
-												
+											<form role="form" name="subirNot" enctype="multipart/form-data" method="post" action="../Procesos/procesaServicios.php">
+												<div class="panel-heading">
+													<div class="form-group">
+														<label>Alta de Servicio</label>
+														<input class="form-control" name="nombre" placeholder="Nombre del Servicio" required/>
+													</div>
+												</div>
+												<div class="panel-body">
+													<div class="form-group">	
+														 <div class="panel-heading">
+															<h4 class="panel-title">
+																<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed"><label>Selecciona el Icono que mejor describa el servicio:</label> 
+																<button class="btn btn-success">
+																	<i class="fa fa-angle-double-down fa-1x" aria-hidden="true"></i>
+																</button>
+																</a>
+															</h4>
+														</div>
+														<div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
+															<div class="panel-body">
+															<div class="" style="width:500px; height:300px; overflow: scroll;">
+																<?php
+																	$directory="assets/img_servicios/";
+																	$dirint = dir($directory);
+																	while (($archivo = $dirint->read())!== false)
+																	{
+																		if(strlen($archivo)>3){
+																		echo"<div class=\" col-md-4 col-xs-4 col-sm-4\">";
+																			echo "<div class=\"form-group\">";
+																				echo "<label class=\"\" for=\"uid-$archivo\">";
+																					echo "<img height=\"100\"src=\"$directory/$archivo\"/>";
+																				echo "</label>";
+																				echo "<div class=\"radio\">";
+																					echo "<input type=\"radio\" value=\"$archivo\" name=\"rutaImg\" class=\"\" id=\"uid-$archivo\" required/>";
+																				echo "</div>";
+																			echo "</div>";
+																		echo "</div>";}
+																	}
+																	$dirint->close();
+																?>
+															</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<textarea class="form-control" name="descripcion" placeholder="Descripción del Servicio" rows="3" required/></textarea>
+													</div>
+													<div class="form-group">
+														<button type="submit" class="btn btn-success" name="subirBtn">Aceptar</button>
+													</div>
+												</div>
 											</form>
-										</div>
+										</div><!-- / Formulario-->
 										
 											<?php
 											?>
@@ -122,14 +172,20 @@
 										<div class="table-responsive">
 											<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 												<thead>
-													
+													<tr>
+														<th>
+															
+														</th>
+													</tr>
 												</thead>
 												<tbody>
+													<tr>
+													</tr>
 													<?php
 													?>
 												</tbody>
 											</table>
-								</div>
+										</div>
 									</div>
 								</div>
 							</div>
