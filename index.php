@@ -19,17 +19,12 @@
 	<link id="callCss" rel="stylesheet" href="themes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
 	<link id="callCss" rel="stylesheet" href="themes/css/style.css" type="text/css" media="screen" charset="utf-8" />
 	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<!--link rel="stylesheet" href="themes/font-awesome/css/font-awesome.min.css">
-
-    <!-- Bootstrap Core CSS --
-	<link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 	<link href="css/carpusel.css" rel="stylesheet">
 
-    <!-- Custom Fonts --
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"-->
+    <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 	<!-- TEMA SECCIONES-->
 	<link id="theme-style" rel="stylesheet" href="css/styles.css">
@@ -44,7 +39,50 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar">
+    <!-- Header -->
+    <header id="top" class="header">
+		<div class="text-vertical-center">
+		<div class="container" style="padding:7% 0% 0% 0%" >
+			<div class="row">
+				<!-- Carousel -->
+				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000">
+					<div class="carousel-inner">
+					
+								
+		
+						<?php
+							include("Procesos/conexion.php");
+							$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
+							$resultadoCS = $mysqli->query($consultaCS);
+							$conta=1;
+							while($fila=$resultadoCS->fetch_row()){
+								if($conta<=1){
+									$clase="\"item active\"";
+								}else{$clase="\"item\"";}
+								echo "<div class=$clase>";
+									echo "<img src=\"certimex/$fila[3]\">";
+									echo "<div class=\"header-text \">";
+										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";										
+										echo "<p>$fila[0]</p></div>";
+											echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";
+											echo "<p>$fila[1]</p></div>";
+											echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";
+											echo "<a class=\"btn btn-light btn-lg\" href=\"$fila[2]\"> Saber más...</a></div>";
+									echo "</div>";							
+								echo "</div>";
+							$conta++;
+							}
+						?>
 
+					</div><!-- /carousel-inner-->
+								<a class="btn btn-light " href="#myCarousel" data-slide="prev">&lsaquo;</a>	
+								<a class="btn btn-light " href="#myCarousel" data-slide="next">&rsaquo;</a>
+				</div><!-- /carousel -->
+			</div>
+			</div>
+		
+        </div>
+    </header>
 	<div id="headerSection">
 	<div class="container" style="padding:0% 0% 0% 0%">	
 		<div >
@@ -103,50 +141,7 @@
 		</div>
 	</div>
 	</div>
-    <!-- Header -->
-    <header id="top" class="header">
-		<div class="text-vertical-center">
-		<div class="container" style="padding:7% 0% 0% 0%" >
-			<div class="row">
-				<!-- Carousel -->
-				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000">
-					<div class="carousel-inner">
-					
-								
-		
-						<?php
-							include("Procesos/conexion.php");
-							$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
-							$resultadoCS = $mysqli->query($consultaCS);
-							$conta=1;
-							while($fila=$resultadoCS->fetch_row()){
-								if($conta<=1){
-									$clase="\"item active\"";
-								}else{$clase="\"item\"";}
-								echo "<div class=$clase>";
-									echo "<img src=\"certimex/$fila[3]\">";
-									echo "<div class=\"header-text \">";
-										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";										
-										echo "<p>$fila[0]</p></div>";
-											echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";
-											echo "<p>$fila[1]</p></div>";
-											echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";
-											echo "<a class=\"btn btn-light btn-lg\" href=\"$fila[2]\"> Saber más...</a></div>";
-									echo "</div>";							
-								echo "</div>";
-							$conta++;
-							}
-						?>
 
-					</div><!-- /carousel-inner-->
-								<a class="btn btn-light " href="#myCarousel" data-slide="prev">&lsaquo;</a>	
-								<a class="btn btn-light " href="#myCarousel" data-slide="next">&rsaquo;</a>
-				</div><!-- /carousel -->
-			</div>
-			</div>
-		
-        </div>
-    </header>
     <!-- About -->
     <section id="acerca" class="acerca-section" style="padding:12	% 0% 0% 0%">
         <div class="container">
@@ -193,7 +188,7 @@
                 <div class="item col-sm-3 col-xs-12">
                     <div class="item-inner">
                         <div class="figure-holder">
-                            <img class="figure-image" src="Imagenes/figure-1.png" alt="image">
+                            <img class="figure-image" src="Imagenes/figure-1.png" alt="image"/>
                         </div><!--//figure-holder-->
                         <h3 class="item-title">	SOLICITUD ELECTRÓNICA</h3>
                         <div class="item-desc">
@@ -204,7 +199,7 @@
 				<div class="item col-sm-3 col-xs-12">
                     <div class="item-inner">
                         <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-1.png" alt="image">
+                            <img class="figure-image" src="imagenes/figure-1.png" alt="image"/>
                         </div><!--//figure-holder-->
                         <h3 class="item-title">PROYECTOS CERTIFICADOS</h3>
                         <div class="item-desc">
@@ -215,7 +210,7 @@
                 <div class="item col-sm-3 col-xs-12">
                     <div class="item-inner">
                         <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-2.png" alt="image">
+                            <img class="figure-image" src="imagenes/figure-2.png" alt="image"/>
                         </div><!--//figure-holder-->
                         <h3 class="item-title">PRESUPUESTO APROXIMADO</h3>
                         <div class="item-desc">
@@ -226,12 +221,10 @@
                 <div class="item col-sm-3 col-xs-12">
                     <div class="item-inner">
                         <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-3.png" alt="image">
+                            <img class="figure-image" src="imagenes/figure-3.png" alt="image"/>
                         </div><!--//figure-holder-->
                         <h3 class="item-title">PROGRAMA DE CAPACITACIÓN</h3>
-                        <div class="item-desc">
-							......
-						</div><!--//item-desc-->
+
                     </div><!--//item-inner-->
                 </div><!--//item-->
             </div><!--//items-wrapper-->
@@ -241,7 +234,7 @@
 
     <!-- Portfolio -->
     <section id="procedimientos" class="procedimientos-section"style="padding:11% 0% 0% 0%">
-        	<div id="procedimientos" class="procedimientos-section">		
+        <div id="procedimientos" class="procedimientos-section">		
 			<div class="container text-center">
 				<h2 class="section-title">PROCEDIMIENTOS</h2>
 				<p class="intro">Contribuye a la conservación y mejoramiento de los recursos naturales y el medio ambiente.</p>
@@ -284,14 +277,12 @@
 					</div><!-- simbolo de pequeños -->
 				</div>
 			</div>
-    </div><!--//procedimientos section-->
+		</div><!--//procedimientos section-->
     </section>
 
-    <!-- Call to Action -->
-
-    <!-- Map -->
+    <!-- ultimasnoticias -->
     <section id="ultimasn" class="procedimientos-section" style="padding:12% 0% 0% 0%">
-           <div id="ultimasn" class="procedimientos-section">
+		<div id="ultimasn" class="procedimientos-section">
         <div class="container text-center">
             <h2 class="section-title">ULTIMAS NOTICIAS</h2>
 				<div class="col-md-12">
@@ -342,7 +333,7 @@
                 </div>
 							
         </div><!--//container-->
-    </div><!--//ULTIMAS NOTICIAS SECCION-->
+		</div><!--//ULTIMAS NOTICIAS SECCION-->
     </section>    
 	
 	
