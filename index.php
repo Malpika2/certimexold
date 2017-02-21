@@ -10,9 +10,9 @@
     <meta name="author" content="">
 
 	    <!-- Bootstrap Core CSS -->
-    <title>Stylish Portfolio - Start Bootstrap Theme</title>
-	<!-- THEMES --
-	<link id="callCss" rel="stylesheet" href="themes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8"/-->	
+    <title>CERTIMEX</title>
+	<!-- THEMES -->
+	<link id="callCss" rel="stylesheet" href="themes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8"/>	
 	<link id="callCss" rel="stylesheet" href="themes/css/style.css" type="text/css" media="screen" charset="utf-8" />
 	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="themes/font-awesome/css/font-awesome.min.css">
@@ -100,14 +100,11 @@
     <!-- Header -->
     <header id="top" class="header">
 		<div class="text-vertical-center">
-		<div class="container" style="padding:7% 0% 0% 0%" >
-			<div class="row">
+		<div class="container">
+			<div class="row" style="padding:12% 1% 0% 1%">
 				<!-- Carousel -->
-				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000">
-					<div class="carousel-inner">
-					
-								
-		
+				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000" style="background-color:rgba(24, 77, 0, 0.4); padding:1% 1% 0% 1%")>
+					<div class="carousel-inner">	
 						<?php
 							include("Procesos/conexion.php");
 							$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
@@ -119,13 +116,16 @@
 								}else{$clase="\"item\"";}
 								echo "<div class=$clase>";
 									echo "<img src=\"certimex/$fila[3]\">";
-									echo "<div class=\"header-text \">";
-										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";										
-										echo "<p>$fila[0]</p></div>";
-											echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";
-											echo "<p>$fila[1]</p></div>";
-											echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\">";
+									echo "<div class=\"header-text\">";
+										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\"  style=\"background-color:rgba(13, 13, 13, .4)\">";										
+											echo "<h3 style=\"color:#ffddcc\"><b>$fila[0]</b></br></br></h3>";
+											echo "<p style=\"font-size:18px; text-align:justify;\">$fila[1]</p>";
 											echo "<a class=\"btn btn-light btn-lg\" href=\"$fila[2]\"> Saber más...</a></div>";
+										echo "<div class=\"col-xs-8 col-sm-8 col-md-8 col-lg-8 text-center\"></div>";
+										
+										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\"></div>";
+										
+											
 									echo "</div>";							
 								echo "</div>";
 							$conta++;
@@ -142,12 +142,12 @@
         </div>
     </header>
     <!-- About -->
-    <section id="acerca" class="acerca-section" style="padding:12% 0% 0% 0%">
-		<div class="tab-content">
-			<div class="tab-pane fade active in" id="home">
-				<h2>Acerca de Certimex</h2>
-				<div class="panel panel-default">
-				<div class="panel-body">
+    <section id="acerca" class="acerca-section"  style=" padding:12% 0% 0% 0%">
+		<div class="tab-content" style="background-image: url(imagenes/fondov2.png); background-size:100% 100%">
+			<div class="tab-pane fade active in" id="home" style="height:650px">
+				<h2 style="background-color:green">Acerca de Certimex</h2>
+				<div class="panel panel-default"  style="background-color:rgba(204, 255, 238,0.5)">
+				<div class="panel-body" style="height:550px">
 					<ul class="nav nav-tabs">
 						<li class=""><a href="#info-pills" data-toggle="tab">Información</a>
 						</li>
@@ -209,64 +209,149 @@
 		</div>
     </section>
 
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="servicios-section">
+       <div id="servicios" class="servicios-section">
+
+        <div class="container" style="padding:5% 0% 0% 0%">
+            <h2 class="section-title">SERVICIOS</h2>
+            <div class="items-wrapper row">
+				<?php
+				include("Procesos/conexion.php");
+				$sql = "SELECT * FROM servicios";
+				$servicios= $mysqli->query($sql);
+				while($fila = $servicios->fetch_row()){
+					
+				echo "<div class=\"item col-sm-4 col-xs-4 col-md-4\">
+						<div class=\"item-inner\">
+							<img class=\"figure-image\" src=\"Imagenes/cestosup.png\" alt=\"image\">
+							<div class=\"\">
+								<img class=\"figure-image\" src=\"img_servicios/$fila[3]\" alt=\"image\" style=\"padding:5% 15% 5% 15%\">
+								<h3 class=\"item-title\">$fila[1]</h3>
+							</div><!--//figure-holder-->
+							
+							<div class=\"item-desc\" style=\"height:100px; overflow:scroll\">
+								<p align=\"justify\" >$fila[2]</p>
+							</div><!--//item-desc-->
+							<img class=\"figure-image\" src=\"Imagenes/cestoinf.png\" alt=\"image\">
+						</div><!--//item-inner-->
+					</div><!--//item-->";
+				}
+				?>
+            </div><!--//items-wrapper-->
+			<div class="items-wrapper row">
+                <div class="item col-sm-4 col-xs-4 col-md-4">
+                    <div class="item-inner">
+						<img class="figure-image" src="Imagenes/cestosup.png" alt="image">
+                        <div class="figure-holder">
+                            <img class="figure-image" src="Imagenes/figure-1.png" alt="image">
+                        </div><!--//figure-holder-->
+                        <h3 class="item-title">	SOLICITUD ELECTRÓNICA</h3>
+                        <div class="item-desc">
+                            ¿Quieres certificarte con CERTIMEX en linea?
+                        </div><!--//item-desc-->
+						<img class="figure-image" src="Imagenes/cestoinf.png" alt="image">
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+				<div class="item col-sm-4 col-xs-4 col-md-4">
+                    <div class="item-inner">
+					<img class="figure-image" src="Imagenes/cestosup.png" alt="image">
+                        <div class="figure-holder">
+                            <img class="figure-image" src="imagenes/figure-1.png" alt="image">
+                        </div><!--//figure-holder-->
+                        <h3 class="item-title">PROYECTOS CERTIFICADOS</h3>
+                        <div class="item-desc">
+							<a class="" href="http://www.certimexsc.com/operadores.php">Conoce los operadores certificados por CERTIMEX</a>
+                        </div><!--//item-desc-->
+						<img class="figure-image" src="Imagenes/cestoinf.png" alt="image">
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+                <div class="item col-sm-4 col-xs-4 col-md-4">
+                    <div class="item-inner">
+					<img class="figure-image" src="Imagenes/cestosup.png" alt="image">
+                        <div class="figure-holder">
+                            <img class="figure-image" src="imagenes/figure-2.png" alt="image">
+                        </div><!--//figure-holder-->
+                        <h3 class="item-title">PRESUPUESTO APROXIMADO</h3>
+                        <div class="item-desc">
+							eCertimex: Módulo de cálculo de presupuestos
+						</div><!--//item-desc-->
+						<img class="figure-image" src="Imagenes/cestoinf.png" alt="image">
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+                <div class="item col-sm-4 col-xs-4 col-md-4">
+                    <div class="item-inner">
+					<img class="figure-image" src="Imagenes/cestosup.png" alt="image">
+                        <div class="figure-holder">
+                            <img class="figure-image" src="imagenes/figure-3.png" alt="image">
+                        </div><!--//figure-holder-->
+                        <h3 class="item-title">PROGRAMA DE CAPACITACIÓN</h3>
+                        <div class="item-desc">
+							......
+						</div><!--//item-desc-->
+						<img class="figure-image" src="Imagenes/cestoinf.png" alt="image">
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+            </div><!--//items-wrapper-->
+        </div><!--//container-->
+    </div><!--//servicios-section ó servicios-->
+    </section>
+
+    <!-- Portfolio -->
 	
-	
-	    <section id="services" class="services bg-primary">
+	   <section id="procedimientos" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Our Services</h2>
+                    <h2>PROCEDIMIENTOS</h2>
+					<p class="intro">Contribuye a la conservación y mejoramiento de los recursos naturales y el medio ambiente.</p>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
-                            </span>
+								<img src="Imagenes/ins.jpg"/>
+								</span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>INSPECCIÓN Y CERTIFICACIÓN</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Procedimiento para la inspeción y certificación de productos orgánicos.</p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+								<img src="Imagenes/jas.jpg"/>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>JAS-ORGANIC</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Procedimiento para la inspección y certificación de productos orgánicos de acuerdo con las normas JAS- Organic de Japón.</p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+								<img src="Imagenes/pic3.jpg"/>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>BIRD FRIENDLY</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Procedimientos para la inspección y ceritifación para Café Bajo sombra "Cafe Bird Friendly".</p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+								<img src="Imagenes/pic5.jpg"/>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>SIMBOLO DE PEQUEÑOS PRODUCTORES</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Procedimiento para la inspección y certificación de las normas de Símbolo de Pequeños Productores</p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
@@ -280,136 +365,6 @@
         <!-- /.container -->
     </section>
 	
-	
-	
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="servicios-section">
-       <div id="servicios" class="servicios-section">
-
-        <div class="container" style="padding:11% 0% 0% 0%">
-            <h2 class="section-title">SERVICIOS</h2>
-            <div class="items-wrapper row">
-				<?php
-				include("Procesos/conexion.php");
-				$sql = "SELECT * FROM servicios";
-				$servicios= $mysqli->query($sql);
-				while($fila = $servicios->fetch_row()){
-					
-				echo "<div class=\"item col-md-3 col-sm-3 col-xs-3 col-lg-3\">
-						<div class=\"item-inner\">
-							<div class=\"figure-holder\">
-								<img class=\"figure-image\" width=\"150px\" src=\"img_servicios/$fila[3]\" alt=\"image\">
-							</div><!--//figure-holder-->
-							<h3 class=\"item-title\">$fila[1]</h3>
-							<div class=\"item-desc\">
-								<p align=\"justify\">$fila[2]</p>
-							</div><!--//item-desc-->
-						</div><!--//item-inner-->
-					</div><!--//item-->";
-				}
-				?>
-            </div><!--//items-wrapper-->
-			<div class="items-wrapper row">
-                <div class="item col-sm-3 col-xs-3">
-                    <div class="item-inner">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="Imagenes/figure-1.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">	SOLICITUD ELECTRÓNICA</h3>
-                        <div class="item-desc">
-                            ¿Quieres certificarte con CERTIMEX en linea?
-                        </div><!--//item-desc-->
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-				<div class="item col-sm-3 col-xs-3">
-                    <div class="item-inner">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-1.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">PROYECTOS CERTIFICADOS</h3>
-                        <div class="item-desc">
-							<a class="" href="http://www.certimexsc.com/operadores.php">Conoce los operadores certificados por CERTIMEX</a>
-                        </div><!--//item-desc-->
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item col-sm-3 col-xs-3">
-                    <div class="item-inner">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-2.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">PRESUPUESTO APROXIMADO</h3>
-                        <div class="item-desc">
-							eCertimex: Módulo de cálculo de presupuestos
-						</div><!--//item-desc-->
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item col-sm-3 col-xs-3">
-                    <div class="item-inner">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-3.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">PROGRAMA DE CAPACITACIÓN</h3>
-                        <div class="item-desc">
-							......
-						</div><!--//item-desc-->
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-            </div><!--//items-wrapper-->
-        </div><!--//container-->
-    </div><!--//servicios-section ó servicios-->
-    </section>
-
-    <!-- Portfolio -->
-    <section id="procedimientos" class="procedimientos-section"style="padding:11% 0% 0% 0%">
-        	<div id="procedimientos" class="procedimientos-section">		
-			<div class="container text-center">
-				<h2 class="section-title">PROCEDIMIENTOS</h2>
-				<p class="intro">Contribuye a la conservación y mejoramiento de los recursos naturales y el medio ambiente.</p>
-				<div class="procedimientos-wrapper">
-					<div class="item item-1 col-md-3 col-sm-3 col-xs-12">
-						<div class="item-inner">
-							<h3 class="item-heading">INSPECCIÓN Y CERTIFICACIÓN</h3>
-							<div class="price-desc">
-								<p>Procedimiento para la inspeción y certificación de productos orgánicos</br></br></br></br></br></p>
-							</div>
-							<a class="btn btn-cta" href="#">Leer más</a>
-						</div>
-					</div><!--Inspeccion-->
-					<div class="item item-2 col-md-3 col-sm-3 col-xs-12">
-						<div class="item-inner">
-							<h3 class="item-heading">JAS-ORGANIC</h3>
-								<div class="price-desc">
-									<p>Procedimiento para la inspección y certificación de productos orgánicos de acuerdo con las normas JAS- Organic de Japón.</br></br></p>
-								</div>
-							<a class="btn btn-cta" href="#">Leer más</a>
-						</div>
-					</div><!--JAS-ORGANIC-->
-					<div class="item item-3 col-md-3 col-sm-3 col-xs-12">
-						<div class="item-inner">
-							<h3 class="item-heading">BIRD FRIENDLY</h3>
-							<div class="price-desc">
-								<p>Procedimientos para la inspección y ceritifación para Café Bajo sombra "Cafe Bird Friendly".</br></br></br></br></p>
-							</div>
-							<a class="btn btn-cta" href="#">Leer más</a>
-						</div>
-					</div><!--bird friendly-->
-					<div class="item item-4 col-md-3 col-sm-3 col-xs-12">
-						<div class="item-inner">
-							<h3 class="item-heading">SIMBOLO DE PEQUEÑOS PRODUCTORES</h3>
-								<div class="price-desc">
-									<p> Procedimiento para la inspección y certificación de las normas de Símbolo de Pequeños Productores</br></br></br></p>
-								</div>
-							<a class="btn btn-cta" href="#">Lee más</a>
-						</div>
-					</div><!-- simbolo de pequeños -->
-				</div>
-			</div>
-    </div><!--//procedimientos section-->
-    </section>
-
-    <!-- Call to Action -->
-
-    <!-- Map -->
     <section id="ultimasn" class="procedimientos-section" style="padding:12% 0% 0% 0%">
            <div id="ultimasn" class="procedimientos-section">
         <div class="container text-center">
@@ -465,28 +420,7 @@
     </div><!--//ULTIMAS NOTICIAS SECCION-->
     </section>    
 	
-	
-	<section id="contact" class="contact-section" style="padding:10% 0% 0% 0%">
-         <div id="contact" class="contact-section">
-        <div class="container text-center">
-            <h2 class="section-title">Contáctanos</h2>
-           
-                <div class="item item-3 col-md-4 col-sm-4 col-xs-12">
-					<p> Direccion</p>
-					<p>Calle 16 de Septiembre 204, Colonia Ejido Guadalupe Victoria, Oaxaca de Juárez, Oaxaca, México.</p>
-				
-				</div>
-				<div class="item item-6 col-md-4 col-sm-4 col-sx-12">
-					<p>Telefono</p>
-					<p>01 951 520 2687 - 01 951 520 0617</p>
-				</div>
-				<div class="item item-7 col-md-4 col-sm-4 col-sx-12">
-					<p> Correo </p>
-					<p>Certimex@certimexsc.com</p>
-				</div>  
-        </div><!--//container-->
-		<div class="container text-left">
-			<h3>Directorio</h3>
+	<h3>Directorio</h3>
 				<div class="item col-md-3 col-sm-3 col-xs-12">
 					<b>Consejo directivo</b>
 						<ul style="list-style-type:none">
@@ -525,17 +459,56 @@
 							<li>marthitacmx@hotmail.com</li>
 						</ul>
 				</div>
-		</div>
-    </div><!--//contact-section-->
-    </section>
+			
+		
+	
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+	
+        <div class="container" style="background-image: url(Imagenes/germina.png); background-size:100% 100%">
             <div class="row">
-            </div>
+            </div><section id="contact" class="contact-section" style="padding:10% 0% 0% 0%">
+         <div id="contact" class="contact-section">
+        <div class="container text-center" style="color:white">
+		<div class="container text-left">
+			
+		</div>
+            <h2 class="section-title">Contáctanos</h2>
+           
+                <div class="item item-3 col-md-3 col-sm-3 col-xs-6">
+					<p> Direccion</p>
+					<p>Calle 16 de Septiembre 204, Colonia Ejido Guadalupe Victoria, Oaxaca de Juárez, Oaxaca, México.</p>
+				
+				</div>
+				<div class="item item-3 col-md-3 col-sm-3 col-xs-6">
+				 <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+					</div>
+				<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
+					<p>Telefono</p>
+					<p>01 951 520 2687 - 01 951 520 0617</p>
+				</div>
+				<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
+					<p> Correo </p>
+					<p>Certimex@certimexsc.com</p>
+				</div>  
+        </div><!--//container-->
+		
+		
+
+    </div><!--//contact-section-->
+    </section>
         </div>
-        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
 
 	
