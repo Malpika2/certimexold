@@ -159,7 +159,42 @@ hr.small {
     -o-background-size: cover;
 }
 
-
+.servicios-section {
+  padding-top: 90px;
+}
+.servicios-section .section-title {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 36px;
+  font-weight: 300;
+}
+.servicios-section .intro {
+  color: #a2a6af;
+  font-size: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+.servicios-section .items-wrapper {
+  margin-bottom: 60px;
+}
+.servicios-section .items-wrapper .figure-holder {
+  min-height: 170px;
+  margin-bottom: 15px;
+  vertical-align: bottom;
+}
+.servicios-section .items-wrapper .item-inner {
+  padding: 30px;
+}
+.servicios-section .items-wrapper .item-title {
+  color: #40babd;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 15px;
+}
+.servicios-section .items-wrapper .item-desc {
+  color: #616670;
 }
 
 /* Callout */

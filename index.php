@@ -9,30 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-	
-	
-	
-	
 	    <!-- Bootstrap Core CSS -->
     <title>Stylish Portfolio - Start Bootstrap Theme</title>
-	<!-- THEMES -->
-	<link id="callCss" rel="stylesheet" href="themes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+	<!-- THEMES --
+	<link id="callCss" rel="stylesheet" href="themes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8"/-->	
 	<link id="callCss" rel="stylesheet" href="themes/css/style.css" type="text/css" media="screen" charset="utf-8" />
 	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<!--link rel="stylesheet" href="themes/font-awesome/css/font-awesome.min.css">
-
-    <!-- Bootstrap Core CSS --
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="themes/font-awesome/css/font-awesome.min.css">
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 	<link href="css/carpusel.css" rel="stylesheet">
-
-    <!-- Custom Fonts --
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	<!-- TEMA SECCIONES-->
-	<link id="theme-style" rel="stylesheet" href="css/styles.css">
+	
+	
+	    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+	    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<!--link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+	
+	
 	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,10 +37,10 @@
 
 </head>
 
-<body data-spy="scroll" data-target=".navbar">
+<body>
 
 	<div id="headerSection">
-	<div class="container" style="padding:0% 0% 0% 0%">	
+	<div class="container">	
 		<div >
 			<div class="cntr">
 				<a href="#top"><img width="5%" src="Imagenes/certimex-logo.png" alt="icon-certimex"/><img width="12%" src="imagenes/certimex-slogan.png" alt="icon2-certimex"/></a>
@@ -55,7 +49,7 @@
 		<div class="navbar">
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li>
+					<li >
 						<a  href="#acerca">CERCA DE</a>
 					</li>
 					<li>
@@ -148,49 +142,175 @@
         </div>
     </header>
     <!-- About -->
-    <section id="acerca" class="acerca-section" style="padding:12	% 0% 0% 0%">
-        <div class="container">
-			<?php 
-				$consulta="SELECT * FROM informacion";
-				$resultado=$mysqli->query($consulta);
-				$fila =$resultado->fetch_assoc();
-				$titulo2= strtoupper($fila['titulo']);
-				echo "<h2 class=\"section-title text-center\">$titulo2</h2>";
-				echo "<blockquote>";
-				echo nl2br("<p>$fila[informacion]</p>");
-				echo "</blockquote>";
-			?>
-        </div><!--//container-->
+    <section id="acerca" class="acerca-section" style="padding:12% 0% 0% 0%">
+		<div class="tab-content">
+			<div class="tab-pane fade active in" id="home">
+				<h2>Acerca de Certimex</h2>
+				<div class="panel panel-default">
+				<div class="panel-body">
+					<ul class="nav nav-tabs">
+						<li class=""><a href="#info-pills" data-toggle="tab">Información</a>
+						</li>
+						<li class=""><a href="#mision-pills" data-toggle="tab">Misión</a>
+						</li>
+						<li class=""><a href="#vision-pills" data-toggle="tab">Visión</a>
+						</li>
+						<li class="active"><a href="#valores-pills" data-toggle="tab">Valores</a>
+						</li>
+						</li>
+						<li class="active"><a href="#historia-pills" data-toggle="tab">Historia</a>
+						</li>
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane fade" id="info-pills">
+							<div class="container">
+							<?php 
+								$consulta="SELECT * FROM informacion";
+								$resultado=$mysqli->query($consulta);
+								$fila =$resultado->fetch_assoc();
+								$titulo2= strtoupper($fila['titulo']);
+								echo "<h3 class=\"section-title text-center\">$titulo2</h3>";
+								echo "<blockquote>";
+								echo nl2br("<p>$fila[informacion]</p>");
+								echo "</blockquote>";
+							?>
+							</div><!--//container-->     
+						</div>
+						<div class="tab-pane fade" id="mision-pills">
+							<div class="container">
+								<h3>MISIÓN</h3>
+								<p>Somos una agencia de certificación de productos orgánicos, inocuos, de comercio justo, y calidad; con acreditación nacional e internacional, comprometida con los actores de las cadenas agroalimentarias sustentables.</p>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="vision-pills">
+							<div class="container">
+								<h3>VISIÓN</h3>
+								<p>Ser la empresa social de certificación de productos y procesos sustentables, líder en México, alineada a su filosofía y valores, con procedimientos confiables e innovadores apegados a las realidades y exigencias nacionales e internacionales. </p>												
+							</div>
+						</div>
+						<div class="tab-pane fade active in" id="valores-pills">
+							<div class="container">
+							<h3>VALORES</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="historia-pills">
+							<div class="container">
+								<h3>HISTORIA</h3>
+								<p>CERTIMEX se crea en el año de 1997 gracias al interés de los productores mexicanos de querer contar con una certificadora nacional que realizara con calidad los servicios de inspección y certificación, pero a precios accesibles para los interesados.
+									Así, CERTIMEX inicia sus actividades en ese año ofreciendo únicamente los servicios de certificación de productos y procesos ecológicos u orgánicos, los cuales se han venido realizando desde entonces con bastante éxito</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
     </section>
 
+	
+	
+	    <section id="services" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Our Services</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+	
+	
+	
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
     <section id="services" class="servicios-section">
        <div id="servicios" class="servicios-section">
+
         <div class="container" style="padding:11% 0% 0% 0%">
             <h2 class="section-title">SERVICIOS</h2>
             <div class="items-wrapper row">
-			<?php
-			include("Procesos/conexion.php");
-			$sql = "SELECT * FROM servicios";
-			$servicios= $mysqli->query($sql);
-			while($fila = $servicios->fetch_row()){
-				
-			echo "<div class=\"item col-sm-3 col-xs-12\">
-                    <div class=\"item-inner\">
-                        <div class=\"figure-holder\">
-                            <img class=\"figure-image\" width=\"150px\" src=\"img_servicios/$fila[3]\" alt=\"image\">
-                        </div><!--//figure-holder-->
-                        <h3 class=\"item-title\">$fila[1]</h3>
-                        <div class=\"item-desc\">
-                            <p align=\"justify\">$fila[2]</p>
-                        </div><!--//item-desc-->
-                    </div><!--//item-inner-->
-                </div><!--//item-->";
-			}
-			?>
+				<?php
+				include("Procesos/conexion.php");
+				$sql = "SELECT * FROM servicios";
+				$servicios= $mysqli->query($sql);
+				while($fila = $servicios->fetch_row()){
+					
+				echo "<div class=\"item col-md-3 col-sm-3 col-xs-3 col-lg-3\">
+						<div class=\"item-inner\">
+							<div class=\"figure-holder\">
+								<img class=\"figure-image\" width=\"150px\" src=\"img_servicios/$fila[3]\" alt=\"image\">
+							</div><!--//figure-holder-->
+							<h3 class=\"item-title\">$fila[1]</h3>
+							<div class=\"item-desc\">
+								<p align=\"justify\">$fila[2]</p>
+							</div><!--//item-desc-->
+						</div><!--//item-inner-->
+					</div><!--//item-->";
+				}
+				?>
             </div><!--//items-wrapper-->
 			<div class="items-wrapper row">
-                <div class="item col-sm-3 col-xs-12">
+                <div class="item col-sm-3 col-xs-3">
                     <div class="item-inner">
                         <div class="figure-holder">
                             <img class="figure-image" src="Imagenes/figure-1.png" alt="image">
@@ -201,7 +321,7 @@
                         </div><!--//item-desc-->
                     </div><!--//item-inner-->
                 </div><!--//item-->
-				<div class="item col-sm-3 col-xs-12">
+				<div class="item col-sm-3 col-xs-3">
                     <div class="item-inner">
                         <div class="figure-holder">
                             <img class="figure-image" src="imagenes/figure-1.png" alt="image">
@@ -212,7 +332,7 @@
                         </div><!--//item-desc-->
                     </div><!--//item-inner-->
                 </div><!--//item-->
-                <div class="item col-sm-3 col-xs-12">
+                <div class="item col-sm-3 col-xs-3">
                     <div class="item-inner">
                         <div class="figure-holder">
                             <img class="figure-image" src="imagenes/figure-2.png" alt="image">
@@ -223,7 +343,7 @@
 						</div><!--//item-desc-->
                     </div><!--//item-inner-->
                 </div><!--//item-->
-                <div class="item col-sm-3 col-xs-12">
+                <div class="item col-sm-3 col-xs-3">
                     <div class="item-inner">
                         <div class="figure-holder">
                             <img class="figure-image" src="imagenes/figure-3.png" alt="image">
