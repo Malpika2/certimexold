@@ -20,10 +20,11 @@
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 	<link href="css/carpusel.css" rel="stylesheet">
+	    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 	
-	
-	    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-	    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+	<!--link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css"-->
 	<!--link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
 	
 	
@@ -40,7 +41,7 @@
 <body>
 
 	<div id="headerSection">
-	<div class="container">	
+	<div class="container" style="height:100px">	
 		<div >
 			<div class="cntr">
 				<a href="#top"><img width="5%" src="Imagenes/certimex-logo.png" alt="icon-certimex"/><img width="12%" src="imagenes/certimex-slogan.png" alt="icon2-certimex"/></a>
@@ -49,7 +50,8 @@
 		<div class="navbar">
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li >
+				<div>
+					<li>
 						<a  href="#acerca">CERCA DE</a>
 					</li>
 					<li>
@@ -87,13 +89,16 @@
 							</li>
 						</ul>
 					</li>
+					</div>
 				</ul>
 			</div>
+			<div>
 			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
+			</div>
 		</div>
 	</div>
 	</div>
@@ -101,7 +106,7 @@
     <header id="top" class="header">
 		<div class="text-vertical-center">
 		<div class="container">
-			<div class="row" style="padding:12% 1% 0% 1%">
+			<div class="row" style="padding:5% 1% 0% 1%; max-height:500px" >
 				<!-- Carousel -->
 				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000" style="background-color:rgba(24, 77, 0, 0.4); padding:1% 1% 0% 1%")>
 					<div class="carousel-inner">	
@@ -142,28 +147,29 @@
         </div>
     </header>
     <!-- About -->
-    <section id="acerca" class="acerca-section"  style=" padding:12% 0% 0% 0%">
+    <section id="acerca" class="acerca-section"  style=" padding:9% 0% 0% 0%">
 		<div class="tab-content" style="background-image: url(imagenes/fondov2.png); background-size:100% 100%">
 			<div class="tab-pane fade active in" id="home" style="height:650px">
-				<h2 style="background-color:green">Acerca de Certimex</h2>
-				<div class="panel panel-default"  style="background-color:rgba(204, 255, 238,0.5)">
+				<h2 style="color:#F90B0B  "><b>Ascerca de Certimex</b></h2>
+			<div>
+			</div>	<div class="panel panel-default"  style="background-color:rgba(204, 255, 238,0.5)">
 				<div class="panel-body" style="height:550px">
 					<ul class="nav nav-tabs">
-						<li class=""><a href="#info-pills" data-toggle="tab">Información</a>
+						<li class="active"><a href="#info-pills" data-toggle="tab">Información</a>
 						</li>
 						<li class=""><a href="#mision-pills" data-toggle="tab">Misión</a>
 						</li>
 						<li class=""><a href="#vision-pills" data-toggle="tab">Visión</a>
 						</li>
-						<li class="active"><a href="#valores-pills" data-toggle="tab">Valores</a>
+						<li class=""><a href="#valores-pills" data-toggle="tab">Valores</a>
 						</li>
 						</li>
-						<li class="active"><a href="#historia-pills" data-toggle="tab">Historia</a>
+						<li class=""><a href="#historia-pills" data-toggle="tab">Historia</a>
 						</li>
 					</ul>
 
 					<div class="tab-content">
-						<div class="tab-pane fade" id="info-pills">
+						<div class="tab-pane fade active in" id="info-pills">
 							<div class="container">
 							<?php 
 								$consulta="SELECT * FROM informacion";
@@ -189,7 +195,7 @@
 								<p>Ser la empresa social de certificación de productos y procesos sustentables, líder en México, alineada a su filosofía y valores, con procedimientos confiables e innovadores apegados a las realidades y exigencias nacionales e internacionales. </p>												
 							</div>
 						</div>
-						<div class="tab-pane fade active in" id="valores-pills">
+						<div class="tab-pane fade" id="valores-pills">
 							<div class="container">
 							<h3>VALORES</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -211,9 +217,99 @@
 
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
     <section id="services" class="servicios-section">
-       <div id="servicios" class="servicios-section">
+	
+	<!-- Carousel -->
+				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000" style="background-color:rgba(24, 77, 0, 0.4); padding:1% 1% 0% 1%")>
+					<div class="carousel-inner">	
+						<?php
+							include("Procesos/conexion.php");
+							$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
+							$resultadoCS = $mysqli->query($consultaCS);
+							$conta=1;
+							while($fila=$resultadoCS->fetch_row()){
+								if($conta<=1){
+									$clase="\"item active\"";
+								}else{$clase="\"item\"";}
+								echo "<div class=$clase>";
+									echo "<img src=\"certimex/$fila[3]\">";
+									echo "<div class=\"header-text\">";
+										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\"  style=\"background-color:rgba(13, 13, 13, .4)\">";										
+											echo "<h3 style=\"color:#ffddcc\"><b>$fila[0]</b></br></br></h3>";
+											echo "<p style=\"font-size:18px; text-align:justify;\">$fila[1]</p>";
+											echo "<a class=\"btn btn-light btn-lg\" href=\"$fila[2]\"> Saber más...</a></div>";
+											
+											
+										echo "<div class=\"col-xs-8 col-sm-8 col-md-8 col-lg-8 text-center\"></div>";
+										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\"></div>";
+										
+											
+									echo "</div>";							
+								echo "</div>";
+							$conta++;
+							}
+						?>
 
-        <div class="container" style="padding:5% 0% 0% 0%">
+					</div><!-- /carousel-inner-->
+								<a class="btn btn-light " href="#myCarousel" data-slide="prev">&lsaquo;</a>	
+								<a class="btn btn-light " href="#myCarousel" data-slide="next">&rsaquo;</a>
+				</div><!-- /carousel -->
+				
+				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000">
+					<div class="carousel-inner">	
+						<?php
+							include("Procesos/conexion.php");
+							$sql = "SELECT * FROM servicios";
+							$servicios2= $mysqli->query($sql);
+							$indice=0;
+							$conta=0;
+							$aux=0;
+							$contenido = array();
+							
+								while($fila2=$servicios2->fetch_row()){
+									$contenido[$aux]= "<div class=\"header-text\">
+														<div class=\"col-sm-4 col-xs-4 col-md-4\">
+															<div class=\"\">
+																<img class=\"figure-image\" src=\"Imagenes/cestosup.png\" alt=\"image\"/ style=\"width:100%; height=50px\">
+																<div class=\"\">
+																	<img class=\"figure-image\" src=\"img_servicios/$fila2[3]\" alt=\"image\"/ style=\"width:85px; height:100px\">
+																	<h3 class=\"item-title\">$fila2[1]</h3>
+																</div>
+																<div class=\"item-desc\">
+																	<p align=\"justify\" >$fila2[2]</p>
+																</div>
+																<img class=\"figure-image\" src=\"Imagenes/cestoinf.png\" alt=\"image\" style=\"width:230px; height=50px\">
+															</div>
+														</div></div>";
+									$aux++;
+								}
+								$registros = count($contenido);
+								while($indice<$registros){
+										if($conta<=1){
+											$clase="\"item active\"";
+											$conta++;
+										}else{$clase="\"item\"";}
+										
+										echo "<div class=$clase>";
+											echo "<img src=\"Imagenes/germina.png\">";
+											for($i=0;$i<3;$i++)
+											{
+												if($indice<$registros){
+												echo "$contenido[$indice]";}
+												$indice++;
+											}	
+											echo "</div>";	
+
+								}
+						?>
+
+					</div><!-- /carousel-inner-->
+								<a class="btn btn-light " href="#caruselSer" data-slide="prev">&lsaquo;</a>	
+								<a class="btn btn-light " href="#caruselSer" data-slide="next">&rsaquo;</a>
+				</div><!-- /carousel -->
+				
+				
+       <div id="servicios" class="servicios-section">
+        <div class="container" style="padding:2% 0% 0% 0%">
             <h2 class="section-title">SERVICIOS</h2>
             <div class="items-wrapper row">
 				<?php
@@ -300,7 +396,7 @@
     <!-- Portfolio -->
 	
 	   <section id="procedimientos" class="services bg-primary">
-        <div class="container">
+        <div class="container" style="padding:9% 0% 0% 0%">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2>PROCEDIMIENTOS</h2>
@@ -365,7 +461,7 @@
         <!-- /.container -->
     </section>
 	
-    <section id="ultimasn" class="procedimientos-section" style="padding:12% 0% 0% 0%">
+    <section id="ultimasn" class="procedimientos-section" style="padding:8% 0% 0% 0%">
            <div id="ultimasn" class="procedimientos-section">
         <div class="container text-center">
             <h2 class="section-title">ULTIMAS NOTICIAS</h2>
@@ -466,56 +562,55 @@
     <!-- Footer -->
     <footer>
 	
-        <div class="container" style="background-image: url(Imagenes/germina.png); background-size:100% 100%">
-            <div class="row">
-            </div><section id="contact" class="contact-section" style="padding:10% 0% 0% 0%">
-         <div id="contact" class="contact-section">
-        <div class="container text-center" style="color:white">
-		<div class="container text-left">
-			
-		</div>
-            <h2 class="section-title">Contáctanos</h2>
-           
-                <div class="item item-3 col-md-3 col-sm-3 col-xs-6">
-					<p> Direccion</p>
-					<p>Calle 16 de Septiembre 204, Colonia Ejido Guadalupe Victoria, Oaxaca de Juárez, Oaxaca, México.</p>
-				
-				</div>
-				<div class="item item-3 col-md-3 col-sm-3 col-xs-6">
-				 <ul class="list-inline">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>
+        <div class="container" style="background-image: url(Imagenes/germina.png); background-size:100% 100%; padding:25% 0% 1% 0%">
+				 <section id="contact" class="contact-section"> 
+				 <div class="row">
 					</div>
-				<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
-					<p>Telefono</p>
-					<p>01 951 520 2687 - 01 951 520 0617</p>
+				 <div id="contact" class="contact-section">
+				<div class="container text-center" style="color:white">
+				<div class="container text-left">
+					
 				</div>
-				<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
-					<p> Correo </p>
-					<p>Certimex@certimexsc.com</p>
-				</div>  
-        </div><!--//container-->
-		
-		
-
-    </div><!--//contact-section-->
-    </section>
+					<h2 class="section-title">Contáctanos</h2>
+				   
+						<div class="item item-3 col-md-3 col-sm-3 col-xs-6">
+							<p> Direccion</p>
+							<p>Calle 16 de Septiembre 204, Colonia Ejido Guadalupe Victoria, Oaxaca de Juárez, Oaxaca, México.</p>
+						
+						</div>
+						<div class="item item-3 col-md-3 col-sm-3 col-xs-6">
+						 <ul class="list-inline">
+								<li>
+									<a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+								</li>
+							</ul>
+						</div>
+						<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
+							<p>Telefono</p>
+							<p>01 951 520 2687 - 01 951 520 0617</p>
+						</div>
+						<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
+							<p> Correo </p>
+							<p>Certimex@certimexsc.com</p>
+						</div>  
+				</div><!--//container-->
+			</div><!--//contact-section-->
+			</section>
         </div>
+		        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
 
 	
 		<script src="themes/js/jquery-1.9.1.min.js"></script>
-		<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="themes/js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
-		<script src="themes/js/jquery.easing-1.3.min.js"></script>
+		<!--script src="themes/js/bootstrap.min.js" type="text/javascript"></script-->
+		<!--script src="themes/js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script-->
+		<!--script src="themes/js/jquery.easing-1.3.min.js"></script-->
 		<script src="themes/js/default.js"></script> 
 		<script type="text/javascript">
 
@@ -531,62 +626,78 @@
 		<!-- jQuery -->
 		<script src="js/jquery.js"></script>
 
-		<!-- Bootstrap Core JavaScript --
+		<!-- Bootstrap Core JavaScript -->
 		<script src="js/bootstrap.min.js"></script>
 
-		<!-- Custom Theme JavaScript -->
-		<script>
-		// Closes the sidebar menu
-		$("#menu-close").click(function(e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-		// Opens the sidebar menu
-		$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-		// Scrolls to the selected menu item on the page
-		$(function() {
-			$('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
-				if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-					var target = $(this.hash);
-					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-					if (target.length) {
-						$('html,body').animate({
-							scrollTop: target.offset().top
-						}, 1000);
-						return false;
-					}
-				}
-			});
-		});
-		//#to-top button appears after scrolling
-		var fixed = false;
-		$(document).scroll(function() {
-			if ($(this).scrollTop() > 250) {
-				if (!fixed) {
-					fixed = true;
-					// $('#to-top').css({position:'fixed', display:'block'});
-					$('#to-top').show("slow", function() {
-						$('#to-top').css({
-							position: 'fixed',
-							display: 'block'
-						});
-					});
-				}
-			} else {
-				if (fixed) {
-					fixed = false;
-					$('#to-top').hide("slow", function() {
-						$('#to-top').css({
-							display: 'none'
-						});
-					});
-				}
-			}
-		});
-		</script>
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    // Disable Google Maps scrolling
+    // See http://stackoverflow.com/a/25904582/1607849
+    // Disable scroll zooming and bind back the click event
+    var onMapMouseleaveHandler = function(event) {
+        var that = $(this);
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+    </script>
 
 	</body>
 
