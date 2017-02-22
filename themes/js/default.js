@@ -16,12 +16,6 @@ $(this).css('background-color','#ffffff');
     // Animation complete.
   });
 });
-
-
-
-	// Apply Bootstrap Scrollspy to show active navigation link based on page scrolling
-	$('.navbar').scrollspy();
-    
     // Scroll page with easing effect
     $('.navbar ul li a').bind('click', function(e) {
         e.preventDefault();

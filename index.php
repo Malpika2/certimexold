@@ -9,6 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+	
+	<!-- Tiny carrousel-->
+		<link rel="stylesheet" href="tinycarousel.css" type="text/css" media="screen"/>
+
+
+	
 	    <!-- Bootstrap Core CSS -->
     <title>CERTIMEX</title>
 	<!-- THEMES -->
@@ -216,102 +222,41 @@
     </section>
 
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="servicios-section">
 	
-	<!-- Carousel -->
-				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000" style="background-color:rgba(24, 77, 0, 0.4); padding:1% 1% 0% 1%")>
-					<div class="carousel-inner">	
-						<?php
-							include("Procesos/conexion.php");
-							$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
-							$resultadoCS = $mysqli->query($consultaCS);
-							$conta=1;
-							while($fila=$resultadoCS->fetch_row()){
-								if($conta<=1){
-									$clase="\"item active\"";
-								}else{$clase="\"item\"";}
-								echo "<div class=$clase>";
-									echo "<img src=\"certimex/$fila[3]\">";
-									echo "<div class=\"header-text\">";
-										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\"  style=\"background-color:rgba(13, 13, 13, .4)\">";										
-											echo "<h3 style=\"color:#ffddcc\"><b>$fila[0]</b></br></br></h3>";
-											echo "<p style=\"font-size:18px; text-align:justify;\">$fila[1]</p>";
-											echo "<a class=\"btn btn-light btn-lg\" href=\"$fila[2]\"> Saber más...</a></div>";
-											
-											
-										echo "<div class=\"col-xs-8 col-sm-8 col-md-8 col-lg-8 text-center\"></div>";
-										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\"></div>";
-										
-											
-									echo "</div>";							
-								echo "</div>";
-							$conta++;
-							}
-						?>
-
-					</div><!-- /carousel-inner-->
-								<a class="btn btn-light " href="#myCarousel" data-slide="prev">&lsaquo;</a>	
-								<a class="btn btn-light " href="#myCarousel" data-slide="next">&rsaquo;</a>
-				</div><!-- /carousel -->
-				
-				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000">
-					<div class="carousel-inner">	
-						<?php
-							include("Procesos/conexion.php");
-							$sql = "SELECT * FROM servicios";
-							$servicios2= $mysqli->query($sql);
-							$indice=0;
-							$conta=0;
-							$aux=0;
-							$contenido = array();
-							
-								while($fila2=$servicios2->fetch_row()){
-									$contenido[$aux]= "<div class=\"header-text\">
-														<div class=\"col-sm-4 col-xs-4 col-md-4\">
-															<div class=\"\">
-																<img class=\"figure-image\" src=\"Imagenes/cestosup.png\" alt=\"image\"/ style=\"width:100%; height=50px\">
-																<div class=\"\">
-																	<img class=\"figure-image\" src=\"img_servicios/$fila2[3]\" alt=\"image\"/ style=\"width:85px; height:100px\">
-																	<h3 class=\"item-title\">$fila2[1]</h3>
-																</div>
-																<div class=\"item-desc\">
-																	<p align=\"justify\" >$fila2[2]</p>
-																</div>
-																<img class=\"figure-image\" src=\"Imagenes/cestoinf.png\" alt=\"image\" style=\"width:230px; height=50px\">
-															</div>
-														</div></div>";
-									$aux++;
-								}
-								$registros = count($contenido);
-								while($indice<$registros){
-										if($conta<=1){
-											$clase="\"item active\"";
-											$conta++;
-										}else{$clase="\"item\"";}
-										
-										echo "<div class=$clase>";
-											echo "<img src=\"Imagenes/germina.png\">";
-											for($i=0;$i<3;$i++)
-											{
-												if($indice<$registros){
-												echo "$contenido[$indice]";}
-												$indice++;
-											}	
-											echo "</div>";	
-
-								}
-						?>
-
-					</div><!-- /carousel-inner-->
-								<a class="btn btn-light " href="#caruselSer" data-slide="prev">&lsaquo;</a>	
-								<a class="btn btn-light " href="#caruselSer" data-slide="next">&rsaquo;</a>
-				</div><!-- /carousel -->
-				
-				
+	
+	<section id="services" class="servicios-section">	
        <div id="servicios" class="servicios-section">
+	   			
         <div class="container" style="padding:2% 0% 0% 0%">
+		
             <h2 class="section-title">SERVICIOS</h2>
             <div class="items-wrapper row">
+			
+				<div id="slider1" style="height:500px">
+		<a class="buttons prev" href="#">&#60;</a>
+				<div class="viewport" style="height:500px">>
+					<ul class="overview">
+					<?php
+					include("Procesos/conexion.php");
+						$sql = "SELECT * FROM servicios";
+						$servicios= $mysqli->query($sql);
+						while($fila = $servicios->fetch_row()){
+							
+							
+							echo"<li><div><div><img class=\"\" src=\"Imagenes/cestosup.png\" alt=\"image\" style=\"width:280px\"></div>
+											<div><img class=\"\" src=\"img_servicios/$fila[3]\" alt=\"image\" style=\"width:125px\"></div>
+											<div><h3 class=\"item-title\">$fila[1]</h3></div>
+											<div style=\"height:100px; overflow:scroll\"><p align=\"justify\" >$fila[2]</p></div>
+											<div><img class=\"\" src=\"Imagenes/cestoinf.png\" alt=\"image\"></div>
+							
+							</div></li><li></li>";
+						}
+					?>
+					</ul>
+				</div>
+		<a class="buttons next" href="#">&#62;</a>
+			</div>
+			
 				<?php
 				include("Procesos/conexion.php");
 				$sql = "SELECT * FROM servicios";
@@ -389,7 +334,9 @@
                     </div><!--//item-inner-->
                 </div><!--//item-->
             </div><!--//items-wrapper-->
+
         </div><!--//container-->
+
     </div><!--//servicios-section ó servicios-->
     </section>
 
@@ -621,16 +568,26 @@
 			  interval: 7000
 			})
 		</script>	
-			
-		
 		<!-- jQuery -->
 		<script src="js/jquery.js"></script>
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script>
+		
+				<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- build:js jquery.tinycarousel.js -->
+	<script type="text/javascript" src="lib/jquery.tinycarousel.js"></script>
+    <!-- /build -->
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('#slider1').tinycarousel();
+		});
+	</script>
+	
+	
+		
+	<script>	
     // Closes the sidebar menu
     // Opens the sidebar menu
     $("#menu-toggle").click(function(e) {
@@ -677,27 +634,8 @@
             }
         }
     });
-    // Disable Google Maps scrolling
-    // See http://stackoverflow.com/a/25904582/1607849
-    // Disable scroll zooming and bind back the click event
-    var onMapMouseleaveHandler = function(event) {
-        var that = $(this);
-        that.on('click', onMapClickHandler);
-        that.off('mouseleave', onMapMouseleaveHandler);
-        that.find('iframe').css("pointer-events", "none");
-    }
-    var onMapClickHandler = function(event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
-    $('.map').on('click', onMapClickHandler);
     </script>
+	
 
 	</body>
 

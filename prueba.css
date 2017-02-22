@@ -1,0 +1,8 @@
+body {
+    background-color: #eee;
+    margin: 20px;
+    padding: 0;
+}
+.slider {
+    border: 5px ridge #fff;
+}
