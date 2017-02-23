@@ -2,35 +2,36 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-	
-	<!-- Tiny carrousel-->
-		<link rel="stylesheet" href="tinycarousel.css" type="text/css" media="screen"/>
-
-
-	
-	    <!-- Bootstrap Core CSS -->
-    <title>CERTIMEX</title>
-	<!-- THEMES -->
-	<link id="callCss" rel="stylesheet" href="themes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8"/>	
-	<link id="callCss" rel="stylesheet" href="themes/css/style.css" type="text/css" media="screen" charset="utf-8" />
-	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="themes/font-awesome/css/font-awesome.min.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+	<!--link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css"-->
 
     <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
-	<link href="css/carpusel.css" rel="stylesheet">
+    <link href="css/full-slider.css" rel="stylesheet">
+	<link href="css/imagenes.css" rel="stylesheet">
+	<!-- Tiny carrousel-->
+	<link rel="stylesheet" href="css/tinycarousel.css" type="text/css" media="screen"/>
+
+    <title>CERTIMEX</title>
+	<!-- THEMES --
+	<link id="callCss" rel="stylesheet" href="themes/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8"/-->
+	<link id="callCss" rel="stylesheet" href="themes/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<!--link rel="stylesheet" href="themes/font-awesome/css/font-awesome.min.css"-->
+
+    <!-- Custom CSS -->
 	    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 	
 	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-	<!--link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css"-->
+	<!---->
+	
+
 	<!--link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
 	
 	
@@ -41,82 +42,85 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
-<body>
+<body  data-spy="scroll" data-target=".navbar">
 
-	<div id="headerSection">
-	<div class="container" style="height:100px">	
-		<div >
-			<div class="cntr">
-				<a href="#top"><img width="5%" src="Imagenes/certimex-logo.png" alt="icon-certimex"/><img width="12%" src="imagenes/certimex-slogan.png" alt="icon2-certimex"/></a>
+<div id="headerSection">
+		<div class="container" style="height:100px">	
+			<div >
+				<div class="cntr">
+					<a href="#top"><img width="5%" src="Imagenes/certimex-logo.png" alt="icon-certimex"/><img width="12%" src="imagenes/certimex-slogan.png" alt="icon2-certimex"/></a>
+				</div>
 			</div>
-		</div>
-		<div class="navbar">
-			<div class="nav-collapse">
-				<ul class="nav">
-				<div>
-					<li>
-						<a  href="#acerca">CERCA DE</a>
-					</li>
-					<li>
-						<a href="#servicios">SERVICIOS</a>
-					</li>
-					<li>
-					   <a href="#procedimientos">PROCEDIMIENTOS</a>
-					</li>
-					<li>
-						<a href="#ultimasn">ULTIMAS NOTICIAS</a>
-					</li>
-					<li>
-						<a href="#contact">CONTACTO</a>
-					</li>
-					<li class="dropdown nav-item">
-						<a href="#inicio" class="dropdown-toggle" data-toggle="dropdown">LOGIN<span class="caret"></span></a>
-						<ul id="menudp" class="dropdown-menu">
-							<li>
-								<div class="col-md-12">
-									<form class="form" role="form" method="post" action="Procesos/validarUsuario.php" accept-charset="UTF-8" id="login-nav">
-										<div class="form-group">
-											<h5>Iniciar Sesión</h5>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required/>
-										</div>
-										<div class="form-group">
-											<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Password" required/>
-										</div>
-										<div class="form-group">
-											<button type="submit" class="btn btn-cta" align="center">Sign in</button>
-										</div>
-									</form>
-								</div>
-							</li>
-						</ul>
-					</li>
-					</div>
-				</ul>
-			</div>
-			<div>
-			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+			<div class="navbar">
+				<div class="nav-collapse">
+
+					<ul class="nav">	
+					<div>
+						<li>
+							<a  href="#acerca">CERCA DE</a>
+						</li>
+						<li>
+							<a href="#servicios">SERVICIOS</a>
+						</li>
+						<li>
+						   <a href="#procedimientos">PROCEDIMIENTOS</a>
+						</li>
+						<li>
+							<a href="#ultimasn">ULTIMAS NOTICIAS</a>
+						</li>
+						<li>
+							<a href="#contact">CONTACTO</a>
+						</li>
+						<li class="dropdown nav-item">
+							<a href="#inicio" class="dropdown-toggle" data-toggle="dropdown">LOGIN<span class="caret"></span></a>
+							<ul id="menudp" class="dropdown-menu">
+								<li>
+									<div class="col-md-12">
+										<form class="form" role="form" method="post" action="Procesos/validarUsuario.php" accept-charset="UTF-8" id="login-nav">
+											<div class="form-group">
+												<h5>Iniciar Sesión</h5>
+											</div>
+											<div class="form-group">
+												<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required/>
+											</div>
+											<div class="form-group">
+												<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Password" required/>
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-cta" align="center">Sign in</button>
+											</div>
+										</form>
+									</div>
+								</li>
+							</ul>
+						</li>
+						</div>
+					</ul>
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-    <!-- Header -->
-    <header id="top" class="header">
-		<div class="text-vertical-center">
-		<div class="container">
-			<div class="row" style="padding:5% 1% 0% 1%; max-height:500px" >
-				<!-- Carousel -->
-				<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="10000" style="background-color:rgba(24, 77, 0, 0.4); padding:1% 1% 0% 1%")>
-					<div class="carousel-inner">	
-						<?php
+   
+   <!-- Header -->
+   
+    <header id="myCarousel" class="carousel slide" style="padding:10% 0% 0% 0%">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+		
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <?php
 							include("Procesos/conexion.php");
 							$consultaCS = "SELECT carrusel.encabezado, carrusel.contenido, carrusel.complemento, imagenes_carrusel.url FROM carrusel, imagenes_carrusel WHERE carrusel.id_carrusel = imagenes_carrusel.id_carrusel"; 
 							$resultadoCS = $mysqli->query($consultaCS);
@@ -126,37 +130,32 @@
 									$clase="\"item active\"";
 								}else{$clase="\"item\"";}
 								echo "<div class=$clase>";
-									echo "<img src=\"certimex/$fila[3]\">";
-									echo "<div class=\"header-text\">";
-										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\"  style=\"background-color:rgba(13, 13, 13, .4)\">";										
-											echo "<h3 style=\"color:#ffddcc\"><b>$fila[0]</b></br></br></h3>";
-											echo "<p style=\"font-size:18px; text-align:justify;\">$fila[1]</p>";
-											echo "<a class=\"btn btn-light btn-lg\" href=\"$fila[2]\"> Saber más...</a></div>";
-										echo "<div class=\"col-xs-8 col-sm-8 col-md-8 col-lg-8 text-center\"></div>";
-										
-										echo "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center\"></div>";
-										
-											
-									echo "</div>";							
+									echo "<div class=\"fill\" style=\"background-image:url(certimex/$fila[3]); background-size:100%; padding:20% 10% 0% 10%;></div>";
+									echo "<div class=\"carousel-caption\">";
+									echo "<div class=\"text-center\"  style=\"background-color:rgba(13, 13, 13, .5)\">";	
+										echo "<div style=\"background-color:rgba(13, 13, 13, .5)\"><h2 style=\"color:#0CE201\"><b>$fila[0]</b></br></br></h2></div>";
+										echo "<div ><h3 style=\"color:#FFFFFF\" text-align:justify;\">$fila[1]</h3>";
+										echo "<a class=\"btn btn-success \" href=\"$fila[2]\"> Saber más...</a></div></div>";
 								echo "</div>";
+								echo "</div>";
+								
 							$conta++;
 							}
 						?>
-
-					</div><!-- /carousel-inner-->
-								<a class="btn btn-light " href="#myCarousel" data-slide="prev">&lsaquo;</a>	
-								<a class="btn btn-light " href="#myCarousel" data-slide="next">&rsaquo;</a>
-				</div><!-- /carousel -->
-			</div>
-			</div>
-		
-        </div>
+        </div>		<div>						
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+</div>
     </header>
     <!-- About -->
     <section id="acerca" class="acerca-section"  style=" padding:9% 0% 0% 0%">
 		<div class="tab-content" style="background-image: url(imagenes/fondov2.png); background-size:100% 100%">
 			<div class="tab-pane fade active in" id="home" style="height:650px">
-				<h2 style="color:#F90B0B  "><b>Ascerca de Certimex</b></h2>
+				<h2 style="color:#F90B0B  "><b>Acerca de Certimex</b></h2>
 			<div>
 			</div>	<div class="panel panel-default"  style="background-color:rgba(204, 255, 238,0.5)">
 				<div class="panel-body" style="height:550px">
@@ -178,6 +177,7 @@
 						<div class="tab-pane fade active in" id="info-pills">
 							<div class="container">
 							<?php 
+							include("Procesos/conexion.php");
 								$consulta="SELECT * FROM informacion";
 								$resultado=$mysqli->query($consulta);
 								$fila =$resultado->fetch_assoc();
@@ -223,122 +223,88 @@
 
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
 	
-	
-	<section id="services" class="servicios-section">	
+		
        <div id="servicios" class="servicios-section">
-	   			
-        <div class="container" style="padding:2% 0% 0% 0%">
+        <div class="container" style="padding:9% 0% 0% 0%">
 		
             <h2 class="section-title">SERVICIOS</h2>
             <div class="items-wrapper row">
 			
 				<div id="slider1" style="height:500px">
-		<a class="buttons prev" href="#">&#60;</a>
-				<div class="viewport" style="height:500px">>
+			<a class="buttons prev" href="#">&#60;</a>
+				<div class="viewport" style="height:500px">
 					<ul class="overview">
 					<?php
 					include("Procesos/conexion.php");
 						$sql = "SELECT * FROM servicios";
 						$servicios= $mysqli->query($sql);
 						while($fila = $servicios->fetch_row()){
-							
-							
-							echo"<li><div><div><img class=\"\" src=\"Imagenes/cestosup.png\" alt=\"image\" style=\"width:280px\"></div>
-											<div><img class=\"\" src=\"img_servicios/$fila[3]\" alt=\"image\" style=\"width:125px\"></div>
+							echo"<li><div>
+											<div><img class=\"imagen-centro\" src=\"img_servicios/$fila[3]\" alt=\"image\"</div>
 											<div><h3 class=\"item-title\">$fila[1]</h3></div>
 											<div style=\"height:100px; overflow:scroll\"><p align=\"justify\" >$fila[2]</p></div>
-											<div><img class=\"\" src=\"Imagenes/cestoinf.png\" alt=\"image\"></div>
+											<div><img class=\"imagen-centro\" style=\"width:100%\" src=\"Imagenes/cestoinf.png\" alt=\"image\"></div>
 							
-							</div></li><li></li>";
+							</div></li>";
 						}
 					?>
+					<li>
+					<div>
+                        <div>
+                            <img class="imagen-centro" src="Imagenes/figure-1.png" alt="image">
+                        </div><!--//figure-holder-->
+                        <div><h3 class="item-title">solicitud electronica</h3></div>
+                        <div style="height:100px; overflow=scroll">
+                            <p>¿Quieres certificarte con CERTIMEX en linea?</p>
+                        </div><!--//item-desc-->
+						<div><img class="imagen-centro" style="width:100%" src="Imagenes/cestoinf.png" alt="image"></div>
+                    </div><!--//item-inner-->
+					</li>
+					<li>
+					<div>
+                        <div>
+                            <img class="imagen-centro" src="Imagenes/figure-2.png" alt="image">
+                        </div><!--//figure-holder-->
+                        <div><h3 class="item-title">proyectos certificados</h3></div>
+                           <div style="height:100px; overflow=scroll">
+							<a class="" href="http://www.certimexsc.com/operadores.php">Conoce los operadores certificados por CERTIMEX</a>
+							</div><!--//item-desc-->
+						<div><img class="imagen-centro" style="width:100%" src="Imagenes/cestoinf.png" alt="image"></div>
+                    </div><!--//item-inner-->
+					</li>
+					<li>
+					<div><div>
+                            <img class="imagen-centro" src="Imagenes/figure-3.png" alt="image">
+                        </div><!--//figure-holder-->
+						<div><h3 class="item-title">presupuesto aprox</h3></div>
+                          <div style="height:100px; overflow=scroll">
+							<p>eCertimex: Módulo de cálculo de presupuestos</p>
+						</div><!--//item-desc-->
+						<div><img class="imagen-centro" style="width:100%" src="Imagenes/cestoinf.png" alt="image"></div>
+                    </div><!--//item-inner-->
+					</li>
+					<li>
+					<div>
+                        <div>
+                            <img class="imagen-centro" src="Imagenes/figure-1.png" alt="image">
+                        </div><!--//figure-holder-->
+                        <div><h3 class="item-title">programa de</h3></div>
+                           <div style="height:100px; overflow=scroll">
+							<p>lorem lorem lorem lorem</p>
+						</div><!--//item-desc-->
+						<div><img class="imagen-centro" style="width:100%" src="Imagenes/cestoinf.png" alt="image"></div>
+                    </div><!--//item-inner-->
+					</li>
 					</ul>
 				</div>
-		<a class="buttons next" href="#">&#62;</a>
+			<a class="buttons next" href="#">&#62;</a>
 			</div>
 			
-				<?php
-				include("Procesos/conexion.php");
-				$sql = "SELECT * FROM servicios";
-				$servicios= $mysqli->query($sql);
-				while($fila = $servicios->fetch_row()){
-					
-				echo "<div class=\"item col-sm-4 col-xs-4 col-md-4\">
-						<div class=\"item-inner\">
-							<img class=\"figure-image\" src=\"Imagenes/cestosup.png\" alt=\"image\">
-							<div class=\"\">
-								<img class=\"figure-image\" src=\"img_servicios/$fila[3]\" alt=\"image\" style=\"padding:5% 15% 5% 15%\">
-								<h3 class=\"item-title\">$fila[1]</h3>
-							</div><!--//figure-holder-->
-							
-							<div class=\"item-desc\" style=\"height:100px; overflow:scroll\">
-								<p align=\"justify\" >$fila[2]</p>
-							</div><!--//item-desc-->
-							<img class=\"figure-image\" src=\"Imagenes/cestoinf.png\" alt=\"image\">
-						</div><!--//item-inner-->
-					</div><!--//item-->";
-				}
-				?>
-            </div><!--//items-wrapper-->
-			<div class="items-wrapper row">
-                <div class="item col-sm-4 col-xs-4 col-md-4">
-                    <div class="item-inner">
-						<img class="figure-image" src="Imagenes/cestosup.png" alt="image">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="Imagenes/figure-1.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">	SOLICITUD ELECTRÓNICA</h3>
-                        <div class="item-desc">
-                            ¿Quieres certificarte con CERTIMEX en linea?
-                        </div><!--//item-desc-->
-						<img class="figure-image" src="Imagenes/cestoinf.png" alt="image">
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-				<div class="item col-sm-4 col-xs-4 col-md-4">
-                    <div class="item-inner">
-					<img class="figure-image" src="Imagenes/cestosup.png" alt="image">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-1.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">PROYECTOS CERTIFICADOS</h3>
-                        <div class="item-desc">
-							<a class="" href="http://www.certimexsc.com/operadores.php">Conoce los operadores certificados por CERTIMEX</a>
-                        </div><!--//item-desc-->
-						<img class="figure-image" src="Imagenes/cestoinf.png" alt="image">
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item col-sm-4 col-xs-4 col-md-4">
-                    <div class="item-inner">
-					<img class="figure-image" src="Imagenes/cestosup.png" alt="image">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-2.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">PRESUPUESTO APROXIMADO</h3>
-                        <div class="item-desc">
-							eCertimex: Módulo de cálculo de presupuestos
-						</div><!--//item-desc-->
-						<img class="figure-image" src="Imagenes/cestoinf.png" alt="image">
-                    </div><!--//item-inner-->
-                </div><!--//item-->
-                <div class="item col-sm-4 col-xs-4 col-md-4">
-                    <div class="item-inner">
-					<img class="figure-image" src="Imagenes/cestosup.png" alt="image">
-                        <div class="figure-holder">
-                            <img class="figure-image" src="imagenes/figure-3.png" alt="image">
-                        </div><!--//figure-holder-->
-                        <h3 class="item-title">PROGRAMA DE CAPACITACIÓN</h3>
-                        <div class="item-desc">
-							......
-						</div><!--//item-desc-->
-						<img class="figure-image" src="Imagenes/cestoinf.png" alt="image">
-                    </div><!--//item-inner-->
-                </div><!--//item-->
             </div><!--//items-wrapper-->
 
         </div><!--//container-->
 
     </div><!--//servicios-section ó servicios-->
-    </section>
 
     <!-- Portfolio -->
 	
@@ -462,7 +428,7 @@
         </div><!--//container-->
     </div><!--//ULTIMAS NOTICIAS SECCION-->
     </section>    
-	
+	<div>
 	<h3>Directorio</h3>
 				<div class="item col-md-3 col-sm-3 col-xs-12">
 					<b>Consejo directivo</b>
@@ -502,30 +468,18 @@
 							<li>marthitacmx@hotmail.com</li>
 						</ul>
 				</div>
+		</div>
 			
-		
-	
-
-    <!-- Footer -->
-    <footer>
-	
-        <div class="container" style="background-image: url(Imagenes/germina.png); background-size:100% 100%; padding:25% 0% 1% 0%">
-				 <section id="contact" class="contact-section"> 
-				 <div class="row">
-					</div>
-				 <div id="contact" class="contact-section">
-				<div class="container text-center" style="color:white">
-				<div class="container text-left">
-					
-				</div>
+		<div id="contact" class="contact-section">
+				<div class="container" style="background-image: url(Imagenes/germina.png); background-size:100% 100%; padding:0% 0% 1% 0%">
 					<h2 class="section-title">Contáctanos</h2>
 				   
-						<div class="item item-3 col-md-3 col-sm-3 col-xs-6">
+						<div class="item item-3 col-md-3 col-sm-3 col-xs-6" >
 							<p> Direccion</p>
 							<p>Calle 16 de Septiembre 204, Colonia Ejido Guadalupe Victoria, Oaxaca de Juárez, Oaxaca, México.</p>
 						
 						</div>
-						<div class="item item-3 col-md-3 col-sm-3 col-xs-6">
+						<div class="item item-3 col-md-3 col-sm-3 col-xs-6" >
 						 <ul class="list-inline">
 								<li>
 									<a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
@@ -542,39 +496,33 @@
 							<p>Telefono</p>
 							<p>01 951 520 2687 - 01 951 520 0617</p>
 						</div>
-						<div class="item item-3 col-md-3 col-sm-3 col-sx-6">
+						<div class="item item-3 col-md-3 col-sm-3 col-sx-6" >
 							<p> Correo </p>
 							<p>Certimex@certimexsc.com</p>
 						</div>  
 				</div><!--//container-->
-			</div><!--//contact-section-->
-			</section>
-        </div>
+		</div>
+    <!-- Footer -->
+    <footer>
 		        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
 
 	
-		<script src="themes/js/jquery-1.9.1.min.js"></script>
 		<!--script src="themes/js/bootstrap.min.js" type="text/javascript"></script-->
 		<!--script src="themes/js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script-->
 		<!--script src="themes/js/jquery.easing-1.3.min.js"></script-->
-		<script src="themes/js/default.js"></script> 
-		<script type="text/javascript">
-
-			$('#testimonial').carousel({
-			  interval: 10000
-			})
-			$('#myCarousel').carousel({
-			  interval: 7000
-			})
-		</script>	
+	<script type="text/javascript">
+    $('#myCarousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 		<!-- jQuery -->
-		<script src="js/jquery.js"></script>
+	<script src="js/jquery.js"></script>
 
 		<!-- Bootstrap Core JavaScript -->
-		<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 		
-				<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     <!-- build:js jquery.tinycarousel.js -->
 	<script type="text/javascript" src="lib/jquery.tinycarousel.js"></script>
     <!-- /build -->
@@ -583,60 +531,7 @@
 		{
 			$('#slider1').tinycarousel();
 		});
-	</script>
-	
-	
-		
-	<script>	
-    // Closes the sidebar menu
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-    //#to-top button appears after scrolling
-    var fixed = false;
-    $(document).scroll(function() {
-        if ($(this).scrollTop() > 250) {
-            if (!fixed) {
-                fixed = true;
-                // $('#to-top').css({position:'fixed', display:'block'});
-                $('#to-top').show("slow", function() {
-                    $('#to-top').css({
-                        position: 'fixed',
-                        display: 'block'
-                    });
-                });
-            }
-        } else {
-            if (fixed) {
-                fixed = false;
-                $('#to-top').hide("slow", function() {
-                    $('#to-top').css({
-                        display: 'none'
-                    });
-                });
-            }
-        }
-    });
-    </script>
-	
-
+	</script>	
 	</body>
 
 </html>
