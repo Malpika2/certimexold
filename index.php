@@ -224,7 +224,7 @@
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
 	
 		
-       <div id="servicios" class="servicios-section">
+    <div id="servicios" class="servicios-section">
         <div class="container" style="padding:9% 0% 0% 0%">
 		
             <h2 class="section-title">SERVICIOS</h2>
